@@ -15,12 +15,12 @@
   abstract = {Web Scraping is the process of extracting content from human-readable websites in order to import it into local storage such as databases or CSV Files. The process of data extraction and its design is time-consuming requiring an analysis of the website, data representation of the objects comprising its structure (DOM), HTML tags, and the Cascading Style Sheets (CSS) classes. To support this process we aim at providing automation. In this paper, we propose a pattern mining technique to scrap news and blog websites by recognizing title and body based on a content structure pattern. This approach consists of three steps, i.e.: extracting news website structure, constructing a pattern of HTML content, and implementing the pattern as a set of rules in web scraping. Our approach is a simple, general, and straightforward way to extract articles that consist of the title, the body of any blogs, or news websites.},
 }
 
-@Online{YoutubeExample,
- title = {},
-        date = {},
-        organization = {},
-        author = {},
+@Online{YoutubeTest,
+ title = {Some cool motion sensor stuff},
+        date = {2015},
+        organization = {Youtube},
+        author = {Peter Zatko and  Ivan Poupyrev and  Rachid El
+        Guerrab and  Regina Dugan},
         url = {https://www.youtube.com/watch?v=mpbWQbkl8_g#t=20m15s},
 }
-
 @Comment{jabref-meta: databaseType:bibtex;}

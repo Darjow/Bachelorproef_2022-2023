@@ -1,0 +1,23 @@
+Data Scrapen
+    Een thread op elk platform laten lopen die de website scraped met bs4 en de volgende data opslaat in een hashmap met | key == url | value ==  data = {referentie: X, article_data = [Likes, Interactie, Views, ...]) |
+    Na dat de threads klaar zijn, veranderd de state en zal deze data ge-analyseerd worden en verwerkt met ... 
+
+
+Dall-e (1) & Stable diffusion (2)
+    
+    (1) https://beta.openai.com/docs/guides/images/usage   [FREE 15 CREDITS]
+    (2) https://www.howtogeek.com/830179/how-to-run-stable-diffusion-on-your-pc-to-generate-ai-images/ [FREE FROM GH]
+
+
+Een twitter-bot wordt daarrond gemaakt, en elke dag krijg je een kunstwerk te zien op basis van automatische analyse van het nieuws.
+    Infos:  https://developer.twitter.com/en/portal/register/keys
+            https://developer.twitter.com/en/portal/projects/1602729877672787976/apps
+            https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/main/Manage-Tweets/create_tweet.js
+    Acc: dariobronders124@hotmail.com
+    API Key: pEil3e7hporf7k6TF4uq8qXZx
+    API Key Secret: 3KQuivmrNQKh0MHSKSl7kmucVtCczgj8jjJiLf2OVW06uvAO16
+    Bearer Token: AAAAAAAAAAAAAAAAAAAAAN2fkQEAAAAAb3CoXYEihRVxkij5EwI8f0XsV4o%3DLCx0AaN4aQSykWZ6Ik58MY9xwNgPY6IKmnmekTKmNRQ9mn9Z1v
+
+
+
+
