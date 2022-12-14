@@ -3,18 +3,17 @@
 \section{Introductie}%
 \label{sec:introductie}
 \noindent
-TODO, onderwerp wat aankondigen en probleem of meerwaarde  eraan koppelen. \\
-%In een wereld van digitalisatie met verschillende nieuwswebsites en social-media platformen kost het soms wat tijd om up-to-date te zijn met wat er dagelijks allemaal gebeurd.
-%Om de tijd die het nodig is om informatie terug te vinden op de allerhande websites en social-media platformen in te korten, is er een nood aan een geautomatiseerde oplossing. \\
+De meestgekende nieuwsbronnen proberen al jaren objectief en feitelijk te blijven om informatie vanop eenzelfde standpunt en met een gelijkaardig boodschap over te brengen. 
+
 \noindent
-Binnen mijn batchelorproef zal ik een toegepast onderzoek uitvoeren die een kunstwerk zal genereren met behulp van één of meerdere deep learning model(s).
-Dit kunstwerk zal een visualisatie zijn van wat er die dag het hoogtepunt was in het nieuws en social media.
+Binnen mijn toegepast onderzoek zal ik een toepassing maken die een kunstwerk zal genereren met behulp van één of meerdere deep learning modellen. Dit zou er voor zorgen dat het dagelijkse hoogtepunt geabstraheerd kan worden tot een unieke AI-gegenereerde kunstwerk.
 
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
- TODO
+\autocite{Salem2020}
+\autocite{Lauri2019}
 
 
 
@@ -23,42 +22,56 @@ Dit kunstwerk zal een visualisatie zijn van wat er die dag het hoogtepunt was in
 \label{sec:methodologie}
 \noindent
 \textbf{Inleiding} \\
-De batchelorproef begint 2 maart 2023 en zal beëindigt worden voor 28 mei 2023. \\
+Het toegepast onderzoek begint 2 maart 2023 en zal beëindigd worden voor 28 mei 2023. \\
 
 \noindent
 \textbf{Fase 1: Realiseren van een scraper} \\
-Om de data te bekomen van de verschillende soorten websites en social-media platformen zal er een web scraper worden gemaakt. Deze scraper zal ontwikkeld worden in python met behulp van een externe library \emph{BeautifulSoup}.
+Om de data te bekomen van de verschillende soorten websites of social-media platformen zal er een web scraper worden gemaakt. Deze scraper zal ontwikkeld worden in python met behulp van een externe library \emph{BeautifulSoup}.
 
 \noindent
 Doordat de presentatie van de verschillende artikelen kunnen verschillen in taal en structuur, zal de scraper een algoritme implementeren die het mogelijk maakt om op een uniforme manier verschillende websites te scrapen. \\
 
 \noindent
 \textbf{Fase 2: Data verwerken en analyseren} \\
-Hier zullen we achterhalen op welke manier we de bekomen data uit voorgaande fase kunnen analyseren en verwerken. Dit zal dan ook geïmplementeerd worden zodat we steeds het belangrijkste artikel eruit kunnen halen. \\
+Tijdens de tweede fase zullen we onderzoeken op welke manier we de bekomen data uit voorgaande fase kunnen analyseren en sorteren. \\ \\
+\noindent
+Het zal belangrijk zijn om rekening te houden met de volgende vragen: 
+\begin{itemize}
+    \item Wat zijn de te extraheren kernzaken?
+    \item Wat is het sentiment van de dag? 
+    \item Welke topic komt het vaakst voor?
+    \item Op basis van welke gegevens kunnen we de artikels sorteren? 
+\end{itemize}
+
+\noindent
+Nadat er een gepaste methode wordt gevonden om dit te realiseren, zal deze ook geïmplementeerd worden. Op deze manier kunnen we steeds het belangrijkste artikel van de dag eruit halen. \\
 
 \noindent
 \textbf{Fase 3: Kunstwerk genereren} \\
-Nu dat we de weten uit de vorige fase wat de hoogtepunt van de dag was. Kunnen we hierop een kunstwerk laten genereren. \\
-Hiervoor zal er gebruik gemaakt worden van (een) deep learning model(s)  Dall-E en/of Stable Diffusion die de kern tekst van het artikel zal omvormen tot een foto. \\
+Nu dat we weten uit de vorige fase wat het hoogtepunt van de dag was. Kunnen we hierop een kunstwerk laten genereren. \\
+Hiervoor zal er gebruik gemaakt worden van een of meerdere deep learning modellen Dall-E en/of Stable Diffusion die de kerntekst van een artikel zal omvormen tot een foto. \\
 
 \noindent
-Één of beide technologieën zullen gebruikt worden binnenin python. \\
+Één of beide technologieën zullen gebruikt worden. 
 
-\noindent
-\textbf{Fase 4: Twitter bot} \\ 
-Nu dat we alle informatie hebben dat nodig is, kunnen we hiervoor een Twitter bot ontwikkelen. 
-Allereerst is er een backend nodig, hier zal er voor node.js gekozen omdat deze ook perfect integreert met de API van Twitter.
-Deze backend zal online geplaatst worden met behulp van Heroku. \\
-
-\noindent
-De backend zal 2 taken hebben om te verrichten:
-\begin{itemize}
-    \item De gegenereerde foto uit de vorige fase ontvangen
-    \item De gegenereerde foto op een bepaald tijdstip tweeten in een interval.
-\end{itemize}
 
 
 %---------- Verwachte resultaten ----------------------------------------------
-\section{Verwacht resultaat, conclusie}%
+\section{Verwacht resultaten}%
 \label{sec:verwachte_resultaten}
-TODO
+\noindent
+Een applicatie ontwerpen die dagelijks een kunstwerk kan genereren op basis van het hoogtepunt van de dag. \\
+
+\noindent
+Op 27 oktober, toen Marokko won van België tijdens de WK kon het hoogtepunt in België \emph{'Riots in Brussels after soccer game, painting'} geweest zijn. Hieronder vindt u enkele voorbeelden die gegenereerd zijn met behulp van Dall-E op basis van deze tekstinput.
+
+
+\noindent
+\begin{tabular}{llll}
+   \includegraphics[width = 1.5in]{rellen_1.png} &
+   \includegraphics[width = 1.5in]{rellen_2.png} \\
+   \includegraphics[width = 1.5in]{rellen_3.png} &
+   \includegraphics[width = 1.5in]{rellen_4.png}
+\end{tabular}
+
+

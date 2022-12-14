@@ -21,3 +21,15 @@ Een twitter-bot wordt daarrond gemaakt, en elke dag krijg je een kunstwerk te zi
 
 
 
+\noindent
+\textbf{Fase 4: Twitter bot} \\ 
+Nu dat we alle informatie hebben dat nodig is, kunnen we hiervoor een Twitter bot ontwikkelen. 
+Allereerst is er een backend nodig, hier zal er voor node.js gekozen omdat deze ook perfect integreert met de API van Twitter.
+Deze backend zal online geplaatst worden met behulp van Heroku. \\
+
+\noindent
+De backend zal 2 taken hebben om te verrichten:
+\begin{itemize}
+    \item De gegenereerde foto uit de vorige fase ontvangen
+    \item De gegenereerde foto op een bepaald tijdstip tweeten in een interval.
+\end{itemize}

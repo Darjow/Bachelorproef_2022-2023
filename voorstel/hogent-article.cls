@@ -418,6 +418,8 @@
   {\contentslabel[\thecontentslabel]{2.4em}}
   {}
   {\hfill\thecontentspage}
+  
+  \usepackage{subfig}
 
 %% -----------------------------------------------------------------------------
 %% Page header and footer
