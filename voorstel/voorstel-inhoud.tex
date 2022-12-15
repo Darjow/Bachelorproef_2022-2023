@@ -8,12 +8,33 @@ De meestgekende nieuwsbronnen proberen al jaren objectief en feitelijk te blijve
 \noindent
 Binnen mijn toegepast onderzoek zal ik een toepassing maken die een kunstwerk zal genereren met behulp van één of meerdere deep learning modellen. Dit zou er voor zorgen dat het dagelijkse hoogtepunt geabstraheerd kan worden tot een unieke AI-gegenereerde kunstwerk.
 
-
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
-\autocite{Salem2020}
-\autocite{Lauri2019}
+\subsection{Wat is webscraping?} 
+\noindent
+Webscraping is een term die gebruikt wordt voor het extraheren van inhoud van websites om het te importeren in lokale opslag zoals een database of CSV bestand.  \autocite{Salem2020} \\
+\noindent
+Websites kunnen ervoor kiezen om een \emph{robots.txt} in de root van hun filesystem te plaatsen. Binnen deze tekstfile kunnen ze beschrijven welke routes gescraped mogen worden. \autocite{GoogleDocs} \\
+\begin{center}
+    \includegraphics[width = 3in]{robotstxt_hln}
+    \captionof{figure}{voorbeeld: www.hln.be/robots.txt}
+\end{center}
+
+\subsection{Wat is DALL-E (2)?}
+
+\noindent
+DALL-E is een AI software ontwikkeld door openAI dat beelden creëert uit tekstuele beschrijvingen, ook wel \emph{prompts} genoemd. Het gebruikt een versie met 12 miljard parameters van het GPT-3 Transformer-model om natuurlijke taalinvoer te interpreteren en overeenkomstige beelden te genereren. In april 2022 heeft OpenAI DALL-E 2 gelanceerd, ontwikkeld om meer realistische foto's met hogere resolutie te kunnen genereren. \autocite{DallEWikipediaNL}  \autocite{DallEWikipediaEN}\\
+
+\noindent
+DALL-E 2 is bovendien getrained met behulp van 650 milioen tekstinputs gescraped van het internet. \autocite{Borji2022} \\
+
+\noindent
+Deze code is niet open source maar kun je gebruiken aan de hand van de openAI API.  \\
+\subsection{Wat is Stable Diffusion?}
+\noindent
+Stable Diffusion is een deep learning, tekst-naar-beeld model uitgebracht in 2022. In tegenstelling tot DALL-E (2) is Stable Diffusion getrained aan de hand van een diepe generatieve neurale netwerk.  Deze code is opensource en kun je lokaal draaien op een computer met een GPU.
+\autocite{StableDifWikipediaEN}
 
 
 
@@ -49,7 +70,7 @@ Nadat er een gepaste methode wordt gevonden om dit te realiseren, zal deze ook g
 \noindent
 \textbf{Fase 3: Kunstwerk genereren} \\
 Nu dat we weten uit de vorige fase wat het hoogtepunt van de dag was. Kunnen we hierop een kunstwerk laten genereren. \\
-Hiervoor zal er gebruik gemaakt worden van een of meerdere deep learning modellen Dall-E en/of Stable Diffusion die de kerntekst van een artikel zal omvormen tot een foto. \\
+Hiervoor zal er gebruik gemaakt worden van een of meerdere deep learning modellen DALL-E 2 en/of Stable Diffusion die de kerntekst van een artikel zal omvormen tot een foto. \\
 
 \noindent
 Één of beide technologieën zullen gebruikt worden. 
@@ -63,7 +84,7 @@ Hiervoor zal er gebruik gemaakt worden van een of meerdere deep learning modelle
 Een applicatie ontwerpen die dagelijks een kunstwerk kan genereren op basis van het hoogtepunt van de dag. \\
 
 \noindent
-Op 27 oktober, toen Marokko won van België tijdens de WK kon het hoogtepunt in België \emph{'Riots in Brussels after soccer game, painting'} geweest zijn. Hieronder vindt u enkele voorbeelden die gegenereerd zijn met behulp van Dall-E op basis van deze tekstinput.
+Op 27 oktober, toen Marokko won van België tijdens de WK kon het hoogtepunt in België \emph{'Riots in Brussels after soccer game, painting'} geweest zijn. Hieronder vindt u enkele voorbeelden die gegenereerd zijn met behulp van DALL-E 2 op basis van deze tekstinput. \\
 
 
 \noindent

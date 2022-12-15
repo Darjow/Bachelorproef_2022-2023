@@ -15,12 +15,52 @@
   abstract = {Web Scraping is the process of extracting content from human-readable websites in order to import it into local storage such as databases or CSV Files. The process of data extraction and its design is time-consuming requiring an analysis of the website, data representation of the objects comprising its structure (DOM), HTML tags, and the Cascading Style Sheets (CSS) classes. To support this process we aim at providing automation. In this paper, we propose a pattern mining technique to scrap news and blog websites by recognizing title and body based on a content structure pattern. This approach consists of three steps, i.e.: extracting news website structure, constructing a pattern of HTML content, and implementing the pattern as a set of rules in web scraping. Our approach is a simple, general, and straightforward way to extract articles that consist of the title, the body of any blogs, or news websites.},
 }
 
-@Online{YoutubeTest,
- title = {Some cool motion sensor stuff},
-        date = {2015},
-        organization = {Youtube},
-        author = {Peter Zatko and  Ivan Poupyrev and  Rachid El
-        Guerrab and  Regina Dugan},
-        url = {https://www.youtube.com/watch?v=mpbWQbkl8_g#t=20m15s},
+@Online{GoogleDocs,
+  author       = {Google},
+  date         = 2022,
+  organization = {Google},
+  title        = {Introduction to robots.txt},
+  url          = {https://developers.google.com/search/docs/crawling-indexing/robots/intro},
 }
+
+@Online{DallEWikipediaEN,
+  author       = {Wikipedia},
+  date         = {2022},
+  organization = {Wikipedia},
+  title        = {DALL-E},
+  url          = {https://en.wikipedia.org/wiki/DALL-E},
+}
+
+@Online{DallEWikipediaNL,
+  author       = {Wikipedia},
+  date         = {2022},
+  organization = {nl.wikipedia.org: DALL-E},
+  title        = {DALL-E},
+  url          = {https://nl.wikipedia.org/wiki/DALL-E},
+}
+
+@Online{StableDifWikipediaEN,
+  author       = {en.wikipedia.org},
+  date         = 2022,
+  organization = {Wikipedia},
+  title        = {Stable Diffusion},
+  url          = {https://en.wikipedia.org/wiki/Stable_Diffusion},
+}
+
+@Article{Borji2022,
+  author   = {Ali Borji},
+  journal  = {Computer Vision and Pattern Recognition},
+  title    = {Generated Faces in the Wild: Quantitative Comparison of Stable Diffusion, Midjourney and DALL-E 2},
+  year     = {2022},
+  abstract = {The field of image synthesis has made great strides in the last couple of years. Recent
+models are capable of generating images with astonishing quality. Fine-grained evaluation of
+these models on some interesting categories such as faces is still missing. Here, we conduct a
+quantitative comparison of three popular systems including Stable Diffusion, Midjourney, and
+DALL-E 2 in their ability to generate photorealistic faces in the wild. We find that Stable
+Diffusion generates better faces than the other systems, according to the FID score. We also
+introduce a dataset of generated faces in the wild dubbed GFW, including a total of 15,076 faces.
+Furthermore, we hope that our study spurs follow-up research in assessing the generative models
+and improving them. Data and code are available at data and code, respectively.},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
