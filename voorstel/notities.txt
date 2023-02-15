@@ -33,3 +33,7 @@ De backend zal 2 taken hebben om te verrichten:
     \item De gegenereerde foto uit de vorige fase ontvangen
     \item De gegenereerde foto op een bepaald tijdstip tweeten in een interval.
 \end{itemize}
+
+
+turingtest
+    sample +/- 10-20 mensen 

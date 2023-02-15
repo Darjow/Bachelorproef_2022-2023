@@ -24,7 +24,7 @@
 }
 
 @Online{DallEWikipediaEN,
-  author       = {Wikipedia},
+  author       = {en.wikipedia.org},
   date         = {2022},
   organization = {Wikipedia},
   title        = {DALL-E},
@@ -32,7 +32,7 @@
 }
 
 @Online{DallEWikipediaNL,
-  author       = {Wikipedia},
+  author       = {nl.wikipedia.org},
   date         = {2022},
   organization = {nl.wikipedia.org: DALL-E},
   title        = {DALL-E},
