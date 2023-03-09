@@ -3,12 +3,12 @@
 \section{Introductie}%
 \label{sec:introductie}
 \noindent
-De meestgekende nieuwsbronnen proberen al lange tijd objectief en feitelijk te zijn, om informatie vanuit eenzelfde perspectief en met een vergelijkbare boodschap over te brengen. Door het hoogtepunt van de dag te abstraheren tot een uniek AI-gegenereerd kunstwerk, kan er worden geëxperimenteerd met de grenzen van de menselijke perceptie en kunst. \\
+Traditionele nieuwsbronnen streven al geruime tijd naar objectiviteit en feitelijkheid, om informatie vanuit eenzelfde perspectief en met een vergelijkbare boodschap over te brengen. Door het hoogtepunt van de dag te abstraheren tot een uniek AI-gegenereerd kunstwerk, kan er worden geëxperimenteerd met de grenzen van de menselijke perceptie en kunst. \\
 \noindent
 Mijn toegepaste onderzoek richt zich op het ontwikkelen van een applicatie die kunstwerken genereert op basis van het dagelijkse hoogtepunt, waarvoor gegevens zullen worden verzameld door het 'scrapen' van nieuwswebsites en socialmediaplatformen.
 Deze zal een kunstwerk genereren met behulp van één of meerdere deep learning modellen. \\
 \noindent
-Het doel is om te onderzoeken of AI al geavanceerd genoeg is om kunstwerken te creëren die niet van echt te onderscheiden zijn. Dit zal gebeuren met behulp van een turing test die zal bevestigen of het kunstwerk al dan niet geïdentificeerd wordt als AI-gegenereerd. \\
+Het doel is om te onderzoeken of AI kunstwerken kan genereren die een boodschap van het dagelijks nieuws kan overbrengen. Dit zal gebeuren met behulp van een turing test die zal bevestigen of het kunstwerk al dan niet enige emotie of boodschap overbrengt met enige relevantie tot het nieuws dat die dag gebeurd.\\
 \noindent
 Dit onderzoek kan interessante inzichten opleveren in de relatie tussen kunst, technologie en de samenleving.
 
@@ -51,14 +51,11 @@ Stable Diffusion is open source en kun je lokaal draaien op een computer met een
 \label{sec:methodologie}
 \noindent
 \textbf{Inleiding} \\
-Het toegepast onderzoek begint 2 maart 2023 en zal beëindigd worden voor 28 mei 2023. \\
+Het toegepaste onderzoek start op 2 maart 2023 en eindigt voor 28 mei 2023.
 
 \noindent
 \textbf{Fase 1: Realiseren van een scraper} \\
 Om de data te bekomen van de verschillende soorten websites of social-media platformen zal er een web scraper worden gemaakt. Deze scraper zal ontwikkeld worden in python met behulp van een externe library \emph{BeautifulSoup}.
-
-\noindent
-Doordat de presentatie van de verschillende artikelen kunnen verschillen in taal en structuur, zal de scraper een algoritme implementeren die het mogelijk maakt om op een uniforme manier verschillende websites te scrapen. \\
 
 \noindent
 \textbf{Fase 2: Data verwerken en analyseren} \\
@@ -82,15 +79,11 @@ Hiervoor zal er gebruik gemaakt worden van een of meerdere deep learning modelle
 
 \noindent
 \textbf{Fase 4: Turing test} \\ 
-Tijdens de laatste fase van dit onderzoek willen we bepalen of de AI-gegenereerde kunstwerken van DALL-E 2 en/of Stable Diffusion niet van echt te onderscheiden zijn. We zullen hiervoor een Turing test uitvoeren. Een groep van 10 tot 20 personen krijgt twee sets van vijf kunstwerken te zien, waarvan er één AI-gegenereerd is en de andere vier door mensen zijn gemaakt. De deelnemers weten niet welk kunstwerk door de AI is gegenereerd. Vervolgens worden de deelnemers gevraagd om aan te geven welk kunstwerk zij denken dat door de AI is gegenereerd. Deze test zal helpen om te bepalen of de AI-gegenereerde kunstwerken van voldoende kwaliteit zijn om door mensen als 'echt' te worden ervaren. Op basis van de resultaten van de Turing test kan worden bepaald of de AI-gegenereerde kunstwerken van voldoende kwaliteit zijn om te worden beschouwd als volwaardige kunstwerken.
-
+Tijdens de laatste fase van dit onderzoek willen we bepalen of de AI-gegenereerde kunstwerken van DALL-E 2 en/of Stable Diffusion herkenbeer zijn uit het dagelijks nieuws. We zullen hiervoor een Turing test uitvoeren dit dit zal beoordelen.
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaten}%
 \label{sec:verwachte_resultaten}
-\noindent
-Het verwachte resultaat van het project is een goed functionerende applicatie die dagelijks een kunstwerk kan genereren op basis van het hoogtepunt van de dag.
-\noindent
-Op 27 oktober, toen Marokko won van België tijdens de WK kon het hoogtepunt in België \emph{'Riots in Brussels after soccer game, painting'} geweest zijn. Hieronder vindt u enkele voorbeelden die gegenereerd zijn met behulp van DALL-E 2 op basis van deze tekstinput. \\
+Het doel van het project is om een goed functionerende applicatie te ontwikkelen die dagelijks een kunstwerk kan genereren op basis van het hoogtepunt van de dag. Bijvoorbeeld, wanneer Marokko won van België tijdens de WK, kan het hoogtepunt in België \emph{'Riots in Brussels after soccer game, painting'} zijn. Op basis van deze tekstinput kunnen enkele voorbeelden gegenereerd worden met behulp van DALL-E 2. Deze voorbeelden worden weergegeven in de onderstaande afbeeldingen.
 
 
 \noindent
@@ -102,7 +95,7 @@ Op 27 oktober, toen Marokko won van België tijdens de WK kon het hoogtepunt in 
     \includegraphics[width = 1.5in]{rellen_4.png}
 \end{tabular} \\
 \noindent
-Daarnaast zal de Turing test uitwijzen of de gegenereerde kunstwerken geavanceerd genoeg zijn om te kunnen worden onderscheiden van kunstwerken die door mensen zijn gemaakt.
+Daarnaast zal uit de turing test blijken of het kunstwerk enige boodschap overbrengt van het nieuws.
 \noindent
-Een voorbeeld van het resultaat van het project zou bijvoorbeeld kunnen zijn dat op een dag het hoogtepunt een artikel is over een nieuwe doorbraak in de gezondheidszorg. De applicatie zal dan op basis van de tekst van dat artikel een kunstwerk genereren dat hierbij past. In de verwachte resultaten zou dan bijvoorbeeld een afbeelding kunnen worden opgenomen van het gegenereerde kunstwerk op basis van het artikel over de gezondheidsdoorbraak inclusief 4 bestaande kunstwerken rond hetzelfde thema. Indien de X-aantal deelnemers  20\% juist scoren dan is de turing test geslaagd.
+Een voorbeeld van het resultaat van het project zou bijvoorbeeld kunnen zijn dat op een dag het hoogtepunt een artikel is over een nieuwe doorbraak in de gezondheidszorg. De applicatie zal dan op basis van de tekst van dat artikel een kunstwerk genereren dat hierbij past. In de verwachte resultaten zou dan bijvoorbeeld een afbeelding kunnen worden opgenomen van het gegenereerde kunstwerk op basis van enkele hoogtepunten van de dag. Als de gebruiker hier enige nieuws in kan herkennen en duidelijk kan verwoorden. Dan is dit een geslaagde test. 
 
