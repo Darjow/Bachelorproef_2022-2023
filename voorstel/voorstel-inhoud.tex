@@ -21,7 +21,7 @@ Webscraping is een term die gebruikt wordt voor het extraheren van inhoud van we
 \noindent
 Websites kunnen ervoor kiezen om een \emph{robots.txt} (\ref{fig:robotstxt}) in de root van hun filesystem te plaatsen. Binnen deze tekstfile kunnen ze beschrijven welke routes gescraped mogen worden. \autocite{GoogleDocs} \\
 \begin{center}
-    \includegraphics[width = 3in]{robotstxt_hln}
+    \includegraphics[width = 3in]{robotstxt_hln.png}
     \captionof{figure}{voorbeeld: www.hln.be/robots.txt}
     \label{fig:robotstxt}
 \end{center}
@@ -86,14 +86,17 @@ Tijdens de laatste fase van dit onderzoek willen we bepalen of de AI-gegenereerd
 Het doel van het project is om een goed functionerende applicatie te ontwikkelen die dagelijks een kunstwerk kan genereren op basis van het hoogtepunt van de dag. Bijvoorbeeld, wanneer Marokko won van België tijdens de WK, kan het hoogtepunt in België \emph{'Riots in Brussels after soccer game, painting'} zijn. Op basis van deze tekstinput kunnen enkele voorbeelden gegenereerd worden met behulp van DALL-E 2. Deze voorbeelden worden weergegeven in de onderstaande afbeeldingen.
 
 
-\noindent
-\begin{tabular}{llll}
+\begin{figure}[h!]
+    \centering
+    \begin{tabular}{llll}
+        \includegraphics[width = 1.5in]{rellen_1.png} &
+        \includegraphics[width = 1.5in]{rellen_2.png} \\
+        \includegraphics[width = 1.5in]{rellen_3.png} &
+        \includegraphics[width = 1.5in]{rellen_4.png}
+    \end{tabular}
+    \caption{Voorbeelden van AI-gegenereerde kunstwerken.}
     \label{fig:examples}
-    \includegraphics[width = 1.5in]{rellen_1.png} &
-    \includegraphics[width = 1.5in]{rellen_2.png} \\
-    \includegraphics[width = 1.5in]{rellen_3.png} &
-    \includegraphics[width = 1.5in]{rellen_4.png}
-\end{tabular} \\
+\end{figure}
 \noindent
 Daarnaast zal uit de turing test blijken of het kunstwerk enige boodschap overbrengt van het nieuws.
 \noindent
