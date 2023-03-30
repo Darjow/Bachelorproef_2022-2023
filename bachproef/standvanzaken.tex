@@ -6,12 +6,30 @@
 % bijzonder aan wat de link is met het vorige en volgende hoofdstuk.
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
+Het genereren van kunstwerken op basis van tekstuele input is een relatief nieuw en innovatief onderzoeksgebied dat de afgelopen jaren aanzienlijke vooruitgang heeft geboekt. Er zijn verschillende technieken en methoden ontwikkeld om deze kunstwerken te creëren, variërend van traditionele machinale vertaling en samenvatting tot meer geavanceerde deep learning-algoritmen.\\
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+In deze literatuurstudie zullen we een uitgebreid overzicht geven van de huidige stand van zaken op het gebied van het genereren van kunstwerken op basis van tekstuele input. We bespreken de belangrijkste technieken en methoden die momenteel worden gebruikt en onderzoeken de resultaten die zijn behaald in verschillende toepassingsgebieden. Daarnaast bespreken we ook de uitdagingen en beperkingen van deze technologie, evenals mogelijke toekomstige ontwikkelingen op dit gebied.\\
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin, gebruik je \texttt{$\backslash${}textcite\{\}}.
-Soms wil je de auteur niet expliciet vernoemen, dan gebruik je \texttt{$\backslash${}autocite\{\}}. In de volgende paragraaf een voorbeeld van elk.
+We zullen ons in het bijzonder richten op het gebruik van webscraping als een methode om tekstuele input te verzamelen voor het genereren van kunstwerken. We zullen bespreken hoe deze methode werkt, welke uitdagingen er zijn bij het gebruik ervan en hoe deze technologie kan worden gebruikt om informatie te verzamelen.
+\pagebreak
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
 
-\lipsum[7-20]
+\section{Generatieve AI}
+
+Generatieve AI is een subdomein van kunstmatige intelligentie dat zich richt op het creëren van nieuwe, unieke content op basis van bestaande gegevens. Het maakt gebruik van geavanceerde technieken zoals deep learning en neurale netwerken om patronen en relaties in de data te identificeren en te leren . Dit stelt de AI in staat om innovatieve en creatieve oplossingen te genereren voor verschillende toepassingen, zoals het genereren van kunstwerken op basis van tekstuele input \autocite{SonixAI2021}\\
+
+Een voorbeeld van een toepassing van generatieve AI is het RobotReporter-project, uitgevoerd aan de Hogeschool Utrecht. Dit project onderzoekt de mogelijkheden van generatieve AI-systemen om journalistiek werk te automatiseren. Het project richt zich op het gebruik van webscraping en natural language processing (NLP) om informatie te verzamelen en te verwerken, en vervolgens met behulp van generatieve AI-algoritmen nieuwe content te creëren \autocite{HU2021}. Dit kan leiden tot efficiëntere en snellere nieuwsproductie. \\
+
+Generatieve AI heeft niet alleen invloed op de journalistieke sector, maar ook op andere beroepen. Een artikel van Harvard Business Review bespreekt de impact van generatieve AI op klantenserviceberoepen \autocite{HBR2023}. In plaats van banen te vervangen, wordt betoogd dat generatieve AI klantenservicemedewerkers kan ondersteunen en hun werk kan verbeteren. Door geautomatiseerde systemen te gebruiken om routineuze taken te voltooien, kunnen medewerkers zich concentreren op meer complexe en empathische aspecten van hun werk. \\
+
+In de afgelopen jaren is generatieve AI een veelbelovend onderzoeksgebied geworden, met tal van toepassingen en mogelijkheden. Desondanks zijn er nog steeds uitdagingen en beperkingen die moeten worden aangepakt, zoals de ethische aspecten en de benodigde rekenkracht. Toekomstig onderzoek en ontwikkeling zullen waarschijnlijk leiden tot nieuwe doorbraken en toepassingen op het gebied van generatieve AI. \\
+
+\section{Webscraping met BeautifulSoup4}
+
+Webscraping is het proces van het extraheren van informatie uit websites door de onderliggende HTML- en CSS-code te analyseren. BeautifulSoup4 (BS4) is een populaire Python-bibliotheek voor webscraping die het eenvoudig maakt om gegevens van webpagina's te verkrijgen en te verwerken \autocite{BIO2014, BSFOR2015}. \\
+
+ Webscraping kunnen we toepassen in drie basisstappen: (1) het ophalen van de HTML-inhoud van een webpagina, (2) het parsen van de HTML met BS4 om een parse tree te genereren, en (3) het navigeren en extraheren van gegevens uit de parse tree met behulp van BS4-methoden en -functies.  \autocite{BIO2014} \\
+
+Kiran et al. \autocite{BSFOR2015} bieden een uitgebreide handleiding voor webscraping in Python met BS4. Ze bespreken de basisprincipes van webscraping en de belangrijkste functies van BS4, zoals het zoeken naar elementen op basis van tags, attributen en tekstinhoud, en het manipuleren van de parse tree om gegevens te extraheren en te verwerken. \\
+
+De officiële documentatie van BeautifulSoup is een waardevolle bron van informatie en richtlijnen voor het gebruik van de BS4-bibliotheek. Het bevat gedetailleerde uitleg over de verschillende functionaliteiten, methoden en voorbeeldcode voor het uitvoeren van webscrapingtaken. De documentatie is beschikbaar op de volgende website: \autocite{BS4Documentation}.
