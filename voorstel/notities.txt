@@ -37,3 +37,22 @@ De backend zal 2 taken hebben om te verrichten:
 
 turingtest
     sample +/- 10-20 mensen 
+
+
+
+
+
+gpt3:
+https://en.wikipedia.org/wiki/GPT-3
+    gpt3.5:
+https://arxiv.org/ftp/arxiv/papers/2304/2304.01503.pdf
+https://arxiv.org/ftp/arxiv/papers/2303/2303.10420.pdf
+
+gpt4:
+https://openai.com/product/gpt-4
+https://arxiv.org/pdf/2303.13375.pdf
+https://arxiv.org/pdf/2303.12712.pdf
+https://www.reuters.com/technology/musk-experts-urge-pause-training-ai-systems-that-can-outperform-gpt-4-2023-03-29/
+
+inleiding: uitgekomen in ablablabla
+gpt4 uitro: onrust en petitie om te stoppe -> ref

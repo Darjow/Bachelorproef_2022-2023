@@ -88,7 +88,7 @@ url = {https://hbr.org/2023/03/generative-ai-will-enhance-not-erase-customer-ser
 }
 
 @Article{BIO2014,
-  author   = {Daniel, Analia, Hugo},
+  author   = {Daniel Glez-Pena, Anália Lourenco, Hugo Lopez-Fernandez, Miguel Reboiro-Jato, Florentino Fdez-Riverola},
   date     = {2014},
   title    = {Web scraping technologies in an API world},
   number   = {5},
@@ -101,7 +101,7 @@ url = {https://hbr.org/2023/03/generative-ai-will-enhance-not-erase-customer-ser
 }
 
 @Article{BSFOR2015,
-  author  = {Chunmei Zheng, Guomei He, Zuojie Peng},
+  author  = {Chunmei Zheng1, Guomei He, Zuojie Peng},
   date    = {2015},
   title   = {A Study of Web Information Extraction Technology Based on Beautiful Soup},
   url     = {http://www.jcomputers.us/vol10/jcp1006-03.pdf},
@@ -146,37 +146,9 @@ date = {2023},
 title = {GPT-4 to GPT-3.5: 'Hold My Scalpel' – A Look at the Competency of OpenAI’s GPT on the Plastic Surgery In-Service Training Exam},
 url = {https://arxiv.org/ftp/arxiv/papers/2304/2304.01503.pdf},
 }
-
-@Article{gpt_cn,
-author = {Junjie, Xuanting, Nuo},
+@MastersThesis{gpt_cn,
+author = {Junjie YeF, Xuanting ChenF, Nuo XuF, Can ZuF, Zekai Shao,Shichun LiuF, Yuhan CuiF, Zeyang ZhouF, Chao GongF, Yang ShenF, Jie ZhouF, Siming Chen, Tao Gui, Qi ZhangF, Xuanjing HuangF},
 date = {2023},
 title = {A Comprehensive Capability Analysis of GPT-3 and GPT-3.5 Series Models},
 url = {https://arxiv.org/ftp/arxiv/papers/2303/2303.10420.pdf},
-}
-@Online{gpt_openai,
-author = {OpenAI},
-date = {2023},
-title = {GPT-4},
-url = {https://openai.com/product/gpt-4/},
-organization = {OpenAI},
-}
-
-@Article{gpt_micai,
-author = {Microsoft, OpenAI},
-date = {2023},
-title = {Capabilities of GPT-4 on Medical Challenge Problems},
-url = {https://arxiv.org/pdf/2303.13375.pdf},
-}
-@Article{gpt_agi,
-author = {Microsoft Research},
-date = {2023},
-title = {Sparks of Artificial General Intelligence: Early experiments with GPT-4},
-url = {https://arxiv.org/pdf/2303.12712.pdf},
-}
-@Online{reuters_musk,
-author = {Reuters},
-date = {2023},
-title = {Elon Musk and others urge AI pause, citing 'risks to society'},
-url = {https://www.reuters.com/technology/musk-experts-urge-pause-training-ai-systems-that-can-outperform-gpt-4-2023-03-29/},
-organization = {Reuters},
 }
