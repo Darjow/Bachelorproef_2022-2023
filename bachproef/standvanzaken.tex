@@ -20,9 +20,14 @@ Generatieve AI is een subdomein van kunstmatige intelligentie dat zich richt op 
 
 Een voorbeeld van een toepassing van generatieve AI is het RobotReporter-project, uitgevoerd aan de Hogeschool Utrecht. Dit project onderzoekt de mogelijkheden van generatieve AI-systemen om journalistiek werk te automatiseren. Het project richt zich op het gebruik van webscraping en natural language processing (NLP) om informatie te verzamelen en te verwerken, en vervolgens met behulp van generatieve AI-algoritmen nieuwe content te creëren \autocite{HU2021}. Dit kan leiden tot efficiëntere en snellere nieuwsproductie. \\
 
-Generatieve AI heeft niet alleen invloed op de journalistieke sector, maar ook op andere beroepen. Een artikel van Harvard Business Review bespreekt de impact van generatieve AI op klantenserviceberoepen \autocite{HBR2023}. In plaats van banen te vervangen, wordt betoogd dat generatieve AI klantenservicemedewerkers kan ondersteunen en hun werk kan verbeteren. Door geautomatiseerde systemen te gebruiken om routineuze taken te voltooien, kunnen medewerkers zich concentreren op meer complexe en empathische aspecten van hun werk. \\
+Binnen de paper van geschreven door Microsoft en OpenAI beschrijven ze de impact van generatieve AI op de arbeidsmarkt. Daarin wordt beschreven dat hoe langer en zwaardere studies je doet en dus hoe hoger het gemiddelde loon is binnen uw functie, hoe meer taken generatieve AI kan doen in plaats van de actor zelf. \autocite{gpt_micai} \\ 
+
+Generatieve AI heeft niet alleen invloed op de hogerbetaalde jobs, maar ook op andere beroepen. Een artikel van Harvard Business Review bespreekt de impact van generatieve AI op klantenserviceberoepen \autocite{HBR2023}. In plaats van banen te vervangen, wordt betoogd dat generatieve AI klantenservicemedewerkers kan ondersteunen en hun werk kan verbeteren. Door geautomatiseerde systemen te gebruiken om routineuze taken te voltooien, kunnen medewerkers zich concentreren op meer complexe en empathische aspecten van hun werk. \\
 
 In de afgelopen jaren is generatieve AI een veelbelovend onderzoeksgebied geworden, met tal van toepassingen en mogelijkheden. Desondanks zijn er nog steeds uitdagingen en beperkingen die moeten worden aangepakt, zoals de ethische aspecten en de benodigde rekenkracht. Toekomstig onderzoek en ontwikkeling zullen waarschijnlijk leiden tot nieuwe doorbraken en toepassingen op het gebied van generatieve AI. \\
+
+\subsection{Generative Adversarial Networks}
+Generative Adversarial Networks (GAN's) zijn een soort kunstmatig intelligentie algoritme ontworpen om het generatieve modelleringsprobleem op te lossen. Het doel van een generatief model is om een verzameling trainingsvoorbeelden te bestuderen en de kansverdeling die ze genereerde te leren. GAN's kunnen dan meer voorbeelden genereren uit de geschatte kansverdeling. GAN's zijn een van de meest succesvolle generatieve modellen, vooral in termen van hun vermogen om realistische, hoge-resolutie beelden te genereren. Ze zijn met succes toegepast op verschillende taken, maar blijven unieke uitdagingen en onderzoeksmogelijkheden bieden, omdat ze gebaseerd zijn op speltheorie, terwijl de meeste andere benaderingen van generatieve modellering gebaseerd zijn op optimalisatie\cite{gan_goodfellow}.
 
 \subsection{GPT}
 Generative Pre-trained Transformer (GPT) is een reeks taalmodellen ontwikkeld door OpenAI. Deze modellen zijn ontworpen om menselijke taal te begrijpen en te genereren met een hoge mate van nauwkeurigheid en coherentie. De reeks GPT-modellen omvat GPT-3, GPT-3.5 en GPT-4. GPT-modellen zijn relevant voor de vraag of AI in staat is kunstwerken te genereren die niet van echt te onderscheiden zijn, vanwege hun prestaties op het gebied van natuurlijke taalverwerking en tekstgeneratie. \\
@@ -33,6 +38,8 @@ In de volgende subsecties zullen we de kenmerken en prestaties van elk model bes
 GPT-3, is een transformer-gebaseerd taalmodel met 175 miljard parameters. Het model heeft interessante prestaties geleverd op het gebied van natuurlijke taalverwerking en kan tekst genereren. \autocite{nytimes_gpt3}. GPT-3 kan worden gebruikt om teksten te genereren, zoals nieuwsartikelen, verhalen, gedichten en zelfs code. Hoewel het model niet perfect is en soms onjuiste of irrelevante informatie kan genereren, heeft het de aandacht getrokken van onderzoekers, technologiebedrijven en het grote publiek vanwege de veelzijdigheid en de kwaliteit van de gegenereerde tekst \autocite{wiki_gpt3}.
 
 GPT-3 is gelanceerd door OpenAI en heeft een ongekende groei doorgemaakt, met een recordaantal gebruikers in korte tijd. Binnen slechts twee maanden na lancering bereikte het platform 100 miljoen gebruikers, waarmee het de snelst groeiende platform ooit is. \autocite{reuters_chatgpt}. Deze snelle groei en brede acceptatie zijn indicatief voor de potentie en relevantie van GPT-3 voor deze paper.\\
+
+GPT-3 heeft een API die gebruikt kan worden.
 
 \subsubsection{GPT-3.5}
 GPT-3.5, een geüpgradede versie van het GPT-3-model, biedt geavanceerdere taalbegrip- en generatiecapaciteiten in vergelijking met zijn voorganger. De verbeteringen in GPT-3.5 stellen het model in staat om een breder scala aan complexe taken uit te voeren en betere resultaten te leveren in verschillende toepassingsgebieden, zoals tekstclassificatie, sentimentanalyse, tekstgeneratie en contextueel begrip \autocite{gpt_nappier, gpt_cn}. \\
@@ -45,23 +52,115 @@ Een ander belangrijk aspect van GPT-3.5 is de verbeterde efficiëntie en prestat
 
 Ondanks de goede prestaties van GPT-3.5, zijn er nog steeds uitdagingen en beperkingen die moeten worden aangepakt. In \autocite{gpt_cn} worden enkele van deze problemen besproken, zoals het genereren van irrelevante of onjuiste informatie (hallucineren), gevoeligheid voor vooroordelen in de trainingsdata en het vermogen om lange teksten te genereren zonder af te dwalen van het onderwerp. Toekomstig onderzoek zou zich kunnen richten op het verbeteren van deze aspecten en het ontwikkelen van methoden om de modelprestaties verder te verfijnen.\\
 
+GPT-3.5 heeft een API die gebruikt kan worden onder de naam gpt-3.5-turbo. 
+
 \subsubsection{GPT4}
 GPT-4, de opvolger van GPT-3.5, is een nog geavanceerder transformer-gebaseerd taalmodel dat verder bouwt op de successen en verbeteringen van zijn voorgangers. GPT-4 biedt aanzienlijke verbeteringen op het gebied van natuurlijke taalverwerking, tekstgeneratie en begrip, evenals efficiëntie en bruikbaarheid \autocite{gpt_openai, gpt_micai}. \\
 
-Een belangrijk kenmerk van GPT-4 is het vermogen om nog nauwkeuriger en coherenter menselijke taal te genereren en te begrijpen. Hierdoor kan GPT-4 beter presteren in verschillende toepassingsgebieden, zoals tekstclassificatie, sentimentanalyse, tekstgeneratie, contextueel begrip en vele anderen \autocite{gpt_agi}. \\
+Een belangrijk kenmerk van GPT-4 is het vermogen om nog nauwkeuriger en coherenter menselijke taal te genereren en te begrijpen. Hierdoor kan GPT-4 beter presteren in verschillende toepassingsgebieden, zoals tekstclassificatie, sentimentanalyse, tekstgeneratie, contextueel begrip en vele anderen \autocite{gpt_micai}. \\
 
 \autocite{gpt_cn} onderzoeken de technische aspecten en verbeteringen van GPT-4 ten opzichte van GPT-3.5. Ze benadrukken de geoptimaliseerde architecturen en trainingsmethoden die in GPT-4 zijn geïmplementeerd, waardoor het model betere prestaties kan leveren zonder dat dit ten koste gaat van de efficiëntie. Deze verbeteringen maken GPT-4 toegankelijker en bruikbaarder voor een breder scala aan toepassingen en apparaten. \\
 
-Binnen het onderzoek van Microsoft \autocite{gpt_agi} toont men aan dat GPT-4 vormen van algemene intelligentie vertoont. Dit blijkt uit de kerncapaciteiten, zoals redeneren, creativiteit en deductie, expertise op verschillende onderwerpen, en de verscheidenheid aan taken die het kan uitvoeren. Hoewel er nog veel werk te doen is om een volledige AGI (Artificial General Intelligence) te creëren, wordt benadrukt dat het definiëren van intelligentie, AI en AGI complex en controversieel is en dat er geen definitieve definitie bestaat. Het onderzoek suggereert dat toekomstig werk op het gebied van GPT-4 en vergelijkbare systemen zich kan richten op het verkennen van nieuwe toepassingen en domeinen en het begrijpen van de mechanismen en principes die aan hun intelligentie ten grondslag liggen.
+Binnen het onderzoek van Microsoft \autocite{gpt_micai} toont men aan dat GPT-4 vormen van algemene intelligentie vertoont. Dit blijkt uit de kerncapaciteiten, zoals redeneren, creativiteit en deductie, expertise op verschillende onderwerpen, en de verscheidenheid aan taken die het kan uitvoeren. Hoewel er nog veel werk te doen is om een volledige AGI (Artificial General Intelligence) te creëren, wordt benadrukt dat het definiëren van intelligentie, AI en AGI complex en controversieel is en dat er geen definitieve definitie bestaat. Het onderzoek suggereert dat toekomstig werk op het gebied van GPT-4 en vergelijkbare systemen zich kan richten op het verkennen van nieuwe toepassingen en domeinen en het begrijpen van de mechanismen en principes die aan hun intelligentie ten grondslag liggen.
 
 Naast de prestaties van GPT-4 hebben Elon Musk en andere experts opgeroepen tot een tijdelijke stop van de ontwikkeling van AI-systemen die GPT-4 kunnen overtreffen, vanwege potentiële risico's en onvoorziene gevolgen die dergelijke geavanceerde systemen met zich mee kunnen brengen \autocite{reuters_musk}. 
+ 
+\section{AI-gegenereerde kunst: tools en voorbeelden}
+\subsection{ Midjourney}
+Midjourney is een organisatie die met behulp van discord kunstwerken kan genereren, zo kun je een prompt sturen in de chat en krijg je verschillende kunstwerken te zien op basis van je prompt, indien je tevreden bent met de resultaten kun je de foto in hoge resultatie downloaden. Indien niet, kun je de beste van de X-aantal resultaten selecteren en hierop nieuwe resultaten laten genereren. 
 
-\section{Webscraping met BeautifulSoup4}
+\begin{center}
+    \includegraphics[width = 4in]{midjourney_ex.png}
+    \captionof{figure}{Voorbeelden van AI-gegenereerde kunstwerken met behulp van Midjourney.}
+    \label{fig:midjourney_ex.png}
+\end{center}
 
-Webscraping is het proces van het extraheren van informatie uit websites door de onderliggende HTML- en CSS-code te analyseren. BeautifulSoup4 (BS4) is een populaire Python-bibliotheek voor webscraping die het eenvoudig maakt om gegevens van webpagina's te verkrijgen en te verwerken \autocite{BIO2014, BSFOR2015}. \\
+Midjourney heeft geen API die we kunnen gebruiken.
 
- Webscraping kunnen we toepassen in drie basisstappen: (1) het ophalen van de HTML-inhoud van een webpagina, (2) het parsen van de HTML met BS4 om een parse tree te genereren, en (3) het navigeren en extraheren van gegevens uit de parse tree met behulp van BS4-methoden en -functies.  \autocite{BIO2014} \\
+\subsection{ Dall-E}
+Dall-E kan gebruikt worden op de website om kunstwerkente generen maar met extra functionaliteiten vergeleken met midjourney. Dall-E laat het toe om foto's te editen en varianties van een kunstwerk te vragen. Met editen kun je een plaats markeren op het gegenereerde resultaat en hierop een nieuwe promp laten genereren, op deze manier kun je bepaalde dingen aanpassen of nieuwe attributen laten genereren op het kunstwerk. \\
 
-Kiran et al. \autocite{BSFOR2015} bieden een uitgebreide handleiding voor webscraping in Python met BS4. Ze bespreken de basisprincipes van webscraping en de belangrijkste functies van BS4, zoals het zoeken naar elementen op basis van tags, attributen en tekstinhoud, en het manipuleren van de parse tree om gegevens te extraheren en te verwerken. \\
+Hieronder vindt u het resultaat gegenereerd op de prompt: ``Painted by Dali: Taiwan targeted by China'.'
 
-De officiële documentatie van BeautifulSoup is een waardevolle bron van informatie en richtlijnen voor het gebruik van de BS4-bibliotheek. Het bevat gedetailleerde uitleg over de verschillende functionaliteiten, methoden en voorbeeldcode voor het uitvoeren van webscrapingtaken. De documentatie is beschikbaar op de volgende website: \autocite{BS4Documentation}.
+\begin{figure}[h!]
+    \centering
+    \begin{tabular}{llll}
+        \includegraphics[width = 1.5in]{dall-e_ex1.png} &
+        \includegraphics[width = 1.5in]{dall-e_ex2.png} \\
+        \includegraphics[width = 1.5in]{dall-e_ex3.png} &
+        \includegraphics[width = 1.5in]{dall-e_ex4.png}
+    \end{tabular}
+    \caption{Voorbeelden van AI-gegenereerde kunstwerken met behulp van Dall-E.}
+    \label{fig:examples}
+\end{figure}
+
+ Bovenstaande functionaliteiten worden ook aangeboden binnen de API van OpenAI.
+
+\subsection{Stable Diffusion}
+Met Stable Diffusion kun je 1-4 kunstwerken laten genereren. \\
+
+Hieronder vind u het resultaat gegenereerd op de prompt:  ``Painted by Van Gogh: War in Russia, food crisis in Asia.''
+
+\begin{figure}[h!]
+    \centering
+    \begin{tabular}{llll}
+        \includegraphics[width = 1.5in]{sd_ex1.png} &
+        \includegraphics[width = 1.5in]{sd_ex2.png} \\
+        \includegraphics[width = 1.5in]{sd_ex3.png} &
+        \includegraphics[width = 1.5in]{sd_ex4.png}
+    \end{tabular}
+    \caption{Voorbeelden van AI-gegenereerde kunstwerken met behulp van Stable Diffusion.}
+    \label{fig:examples}
+\end{figure}
+
+Stable Diffusion heeft een API waarvan gebruik van gemaakt kan worden. \\
+
+\pagebreak
+
+\subsection{Toepassingen}
+Binnen deze subsectie bespreek ik enkele toepassingen die gebruik maken van de eerder vermelde tools in punt 2.1/2.2 en 2.3.
+
+\subsubsection{NFT's}
+Een non-fungible token, beter bekend als een NFT, is een uniek digitaal object op een blockchain, meestal verbonden met speciale digitale content zoals foto's of muziek. Ze hebben een gigantische markt opgebouwd, waar individuele NFT's een waarde van miljoenen dollars kunnen bereiken \autocite{nft_whatisit}. Vele bedrijven of individuën hebben NFT's zoals Snoop Dogg of Coca Cola.
+
+\subsubsection{Graphic Design}
+Binnen het domein van graphic design kunnen AI-tools zoals DALL-E en StyleGAN worden ingezet voor verschillende toepassingen. Zo kunnen ze bijvoorbeeld worden gebruikt om nieuwe verpakkingen, zoals cornflakesdozen, te ontwerpen door unieke en aantrekkelijke ontwerpen te genereren op basis van bestaande stijlen en trends. 
+
+Daarnaast kunnen ze bedrijven helpen bij het creëren van opvallende en herkenbare logo's door verschillende concepten te genereren op basis van tekstbeschrijvingen of bestaande ontwerpelementen. 
+
+\subsubsection{Webdevelopers}
+Voor frontend webdevelopers kunnen AI-tools zoals Midjourney bijzonder handig zijn bij het opdoen van inspiratie voor het ontwerpen van websites. Door bijvoorbeeld aan Midjourney een prompt te geven zoals "Beautiful landing page Blissful state of mind, Natural healing techniques, Yoga, Meditation, ui, ux, elementor, wordpress, simple, minimalistic, aesthetics" \ref{fig:frontendwebdev_ex}, kan de AI-tool een reeks ontwerpen en concepten genereren die passen bij de gegeven beschrijving. Dit helpt webdevelopers om ideeën op te doen en hun creativiteit te stimuleren bij het bouwen van unieke en aantrekkelijke websites.
+
+\begin{center}
+    \includegraphics[width = 4in]{frontendwebdev_ex}
+    \captionof{figure}{Voorbeeld: Landingspagina op basis van een prompt in Midjourney.}
+    \label{fig:frontendwebdev_ex}
+\end{center}
+
+
+\section{Webscraping}
+Webscraping is het proces van het extraheren van informatie uit websites door de onderliggende HTML- en CSS-code te analyseren.  
+
+Belangrijke zaken waarmee er rekening gehouden moet worden om een scraper te creeëren volgens \autocite{BIO2014}:
+\begin{itemize}
+    \item Toegang krijgen tot de site: De webscraper maakt verbinding met de doelwebsite via het HTTP-protocol en houdt rekening met verzoeksmethoden zoals GET en POST. Daarnaast moet de 'User-Agent' correct worden ingesteld en dient de scraper zich te houden aan de 'robots.txt' regels van de site.
+    \item HTML-Parsen en de inhoud extraheren: De scraper moet in staat zijn om de HTML-structuur van de webpagina te begrijpen en de relevante gegevens te extraheren. Dit kan worden bereikt met behulp van reguliere expressies, HTML-parsing bibliotheken of op selectors gebaseerde talen zoals XPath en CSS-selector syntax.
+    \item Output: De geëxtraheerde gegevens moeten worden omgezet in een gestructureerde weergave die geschikt is voor verdere analyse en opslag, zoals in-memory datastructuren of tekstgebaseerde bestandsformaten zoals XML of CSV.
+\end{itemize}
+
+BeautifulSoup4 (BS4) is een populaire Python-bibliotheek voor webscraping die het eenvoudig maakt om gegevens van webpagina's te verkrijgen en te verwerken \autocite{BIO2014, BSFOR2015}. \\
+
+\subsection{BeautifulSoup4}
+De officiële documentatie van BeautifulSoup is een waardevolle bron van informatie en richtlijnen voor het gebruik van de BS4-bibliotheek. Het bevat gedetailleerde uitleg over de verschillende functionaliteiten, methoden en voorbeeldcode voor het uitvoeren van webscrapingtaken. De documentatie is beschikbaar op de volgende website: \autocite{BS4Documentation}. \\
+....
+
+
+\section{De uitdagingen en beperkingen van AI-gegenereerde kunst}
+...
+\subsection{Creativiteit}
+...
+\subsection{Originaliteit}
+...
+\subsection{Interpretatie}
+...
+
