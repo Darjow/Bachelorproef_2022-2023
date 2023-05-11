@@ -19,7 +19,7 @@ Al met al zal deze literatuurstudie een diepgaand inzicht bieden in de generatie
 
 \section{Generatieve AI}
 
-Generatieve AI is een subdomein van kunstmatige intelligentie dat zich richt op het creëren van nieuwe, unieke content op basis van bestaande gegevens. Het maakt gebruik van geavanceerde technieken zoals deep learning en neurale netwerken om patronen en relaties in de data te identificeren en te leren. Dit stelt de AI in staat om innovatieve en creatieve oplossingen te genereren voor verschillende toepassingen, zoals het genereren van kunstwerken op basis van tekstuele input \autocite{SonixAI2021}\\
+Generatieve AI is een subdomein van kunstmatige intelligentie dat zich richt op het creëren van nieuwe, unieke content op basis van bestaande gegevens. Het maakt gebruik van geavanceerde technieken zoals deep learning om patronen en relaties in de data te identificeren en te leren. Dit stelt de AI in staat om innovatieve en creatieve oplossingen te genereren voor verschillende toepassingen, zoals het genereren van kunstwerken op basis van tekstuele input \autocite{SonixAI2021}\\
 
 Een voorbeeld van een toepassing van generatieve AI is het RobotReporter-project, uitgevoerd aan de Hogeschool Utrecht. Dit project onderzoekt de mogelijkheden van generatieve AI-systemen om journalistiek werk te automatiseren. Het project richt zich op het gebruik van webscraping en natural language processing (NLP) om informatie te verzamelen en te verwerken, en vervolgens met behulp van generatieve AI-algoritmen nieuwe content te creëren \autocite{HU2021}. Dit kan leiden tot efficiëntere en snellere nieuwsproductie. \\
 
@@ -27,10 +27,18 @@ Binnen de paper geschreven door Microsoft en OpenAI beschrijven ze de impact van
 
 Generatieve AI heeft niet alleen invloed op de hogerbetaalde jobs, maar ook op andere beroepen. Een artikel van Harvard Business Review bespreekt de impact van generatieve AI op klantenserviceberoepen \autocite{HBR2023}. In plaats van banen te vervangen, wordt betoogd dat generatieve AI klantenservicemedewerkers kan ondersteunen en hun werk kan verbeteren. Door geautomatiseerde systemen te gebruiken om routineuze taken te voltooien, kunnen medewerkers zich concentreren op meer complexe en empathische aspecten van hun werk. \\
 
-In de afgelopen jaren is generatieve AI een veelbelovend onderzoeksgebied geworden, met tal van toepassingen en mogelijkheden. Desondanks zijn er nog steeds uitdagingen en beperkingen die moeten worden aangepakt, zoals de ethische aspecten en de benodigde rekenkracht. Toekomstig onderzoek en ontwikkeling zullen waarschijnlijk leiden tot nieuwe doorbraken en toepassingen op het gebied van generatieve AI. \\
+In de afgelopen jaren is generatieve AI een veelbelovend onderzoeksgebied geworden, met tal van toepassingen en mogelijkheden. Desondanks zijn er nog steeds uitdagingen en beperkingen die moeten worden aangepakt, zoals de  aspecten en de benodigde rekenkracht. Toekomstig onderzoek en ontwikkeling zullen waarschijnlijk leiden tot nieuwe doorbraken en toepassingen op het gebied van generatieve AI. \\
 
-\subsection{Generative Adversarial Networks}
-Generative Adversarial Networks (GAN's) zijn een soort kunstmatig intelligentie algoritme ontworpen om het generatieve modelleringsprobleem op te lossen. Het doel van een generatief model is om een verzameling trainingsvoorbeelden te bestuderen en de kansverdeling die ze genereerde te leren. GAN's kunnen dan meer voorbeelden genereren uit de geschatte kansverdeling. GAN's zijn een van de meest succesvolle generatieve modellen, vooral in termen van hun vermogen om realistische, hoge-resolutie beelden te genereren. Ze zijn met succes toegepast op verschillende taken, maar blijven unieke uitdagingen en onderzoeksmogelijkheden bieden, omdat ze gebaseerd zijn op speltheorie, terwijl de meeste andere benaderingen van generatieve modellering gebaseerd zijn op optimalisatie. \autocite{gan_goodfellow}.
+\subsection{Transformer}
+Stel je voor dat je een groep vrienden hebt die allemaal tegelijkertijd praten. Je kunt aandacht besteden aan iedereen, maar afhankelijk van het onderwerp, zul je misschien meer aandacht besteden aan wat sommigen zeggen dan aan anderen. Dit is hoe transformers werken. \\
+
+Transformers zijn een soort computermodel dat wordt gebruikt om taal te begrijpen en te genereren. In plaats van elk woord in een zin een voor een te verwerken, zoals een mens die leest, kunnen transformers naar alle woorden in een zin tegelijk kijken. Dit stelt hen in staat om de relaties tussen woorden beter te begrijpen, ongeacht hoe ver ze in de zin van elkaar verwijderd zijn. \\
+
+Laten we een voorbeeld nemen: "Het glas brak omdat het gevallen was." Voor ons is het duidelijk dat "het" verwijst naar "het glas". Maar voor een computermodel dat woorden een voor een verwerkt, kan het moeilijk zijn om deze verbinding te maken, vooral als de zin langer is. Transformers lossen dit probleem op met iets dat we "attention" noemen. Dit betekent dat het model beslist welke delen van de zin het belangrijkst zijn om de betekenis te begrijpen, net zoals jij zou besluiten naar wie je moet luisteren in een groep vrienden.\\ 
+
+Dit mechanisme van "attention" is niet alleen cruciaal voor het begrijpen van tekst, maar ook voor het genereren ervan, zoals in het geval van GPT. \\
+
+GPT,, is in feite een groot transformer-model dat is getraind op een aanzienlijke hoeveelheid tekst van het internet. Tijdens deze training heeft het model een verscheidenheid aan gesprekken en schrijfstijlen 'gehoord', en met behulp van de transformer-architectuur, heeft het de onderlinge relaties tussen woorden in deze teksten leren begrijpen. \\
 
 \subsection{GPT}
 Generative Pre-trained Transformer (GPT) is een reeks taalmodellen ontwikkeld door OpenAI. Deze modellen zijn ontworpen om menselijke taal te begrijpen en te genereren met een hoge mate van nauwkeurigheid en coherentie. De reeks GPT-modellen omvat GPT-3, GPT-3.5 en GPT-4. GPT-modellen zijn relevant voor de vraag of AI in staat is kunstwerken te genereren die niet van echt te onderscheiden zijn, vanwege hun prestaties op het gebied van natuurlijke taalverwerking en tekstgeneratie. \\
@@ -38,9 +46,15 @@ Generative Pre-trained Transformer (GPT) is een reeks taalmodellen ontwikkeld do
 In de volgende subsecties zullen we de kenmerken en prestaties van elk model bespreken, evenals hun bijdragen aan het veld van kunstmatige intelligentie en hun potentieel om kunstwerken te helpen genereren. \\
 
 \subsubsection{GPT-3}
-GPT-3, is een transformer-gebaseerd taalmodel met 175 miljard parameters. Het model heeft interessante prestaties geleverd op het gebied van natuurlijke taalverwerking en kan tekst genereren. \autocite{nytimes_gpt3}. GPT-3 kan worden gebruikt om teksten te genereren, zoals nieuwsartikelen, verhalen, gedichten en zelfs code. Hoewel het model niet perfect is en soms onjuiste of irrelevante informatie kan genereren, heeft het de aandacht getrokken van onderzoekers, technologiebedrijven en het grote publiek vanwege de veelzijdigheid en de kwaliteit van de gegenereerde tekst \autocite{wiki_gpt3}.
+GPT-3, is een transformer-gebaseerd taalmodel met 175 miljard parameters. Het model heeft interessante prestaties geleverd op het gebied van natuurlijke taalverwerking en kan tekst genereren. \autocite{nytimes_gpt3}. GPT-3 kan worden gebruikt om teksten te genereren, zoals nieuwsartikelen, verhalen, gedichten en zelfs code. Hoewel het model niet perfect is en soms onjuiste of irrelevante informatie kan genereren, heeft het de aandacht getrokken van onderzoekers, technologiebedrijven en het grote publiek vanwege de veelzijdigheid en de kwaliteit van de gegenereerde tekst \autocite{wiki_gpt3}. \\
 
-GPT-3 is gelanceerd door OpenAI en heeft een ongekende groei doorgemaakt, met een recordaantal gebruikers in korte tijd. Binnen slechts twee maanden na lancering bereikte het platform 100 miljoen gebruikers, waarmee het de snelst groeiende platform ooit is. \autocite{reuters_chatgpt}. Deze snelle groei en brede acceptatie zijn indicatief voor de potentie en relevantie van GPT-3 voor deze paper.\\
+GPT-3 is gelanceerd door OpenAI en heeft een ongekende groei doorgemaakt, met een recordaantal gebruikers in korte tijd. Binnen slechts twee maanden na lancering bereikte het platform 100 miljoen gebruikers, waarmee het één van de snelst groeiende platform ooit is \ref{fig:gpt_growth}. \autocite{reuters_chatgpt}. Deze snelle groei en brede acceptatie zijn indicatief voor de potentie en relevantie van GPT-3 voor deze paper.\\
+
+\begin{center}
+    \includegraphics[width = 4in]{gpt_growth.png}
+    \captionof{figure}{Tijd nodig tot 1 milioen gebruikers. \autocite{gpt_millie}}
+    \label{fig:gpt_growth}
+\end{center}
 
 GPT-3 heeft een API die gebruikt kan worden.
 
@@ -66,7 +80,7 @@ Een belangrijk kenmerk van GPT-4 is het vermogen om nog nauwkeuriger en coherent
 
 Binnen het onderzoek van Microsoft \autocite{gpt_micai} toont men aan dat GPT-4 vormen van algemene intelligentie vertoont. Dit blijkt uit de kerncapaciteiten, zoals redeneren, creativiteit en deductie, expertise op verschillende onderwerpen, en de verscheidenheid aan taken die het kan uitvoeren. Hoewel er nog veel werk te doen is om een volledige AGI (Artificial General Intelligence) te creëren, wordt benadrukt dat het definiëren van intelligentie, AI en AGI complex en controversieel is en dat er geen definitieve definitie bestaat. Het onderzoek suggereert dat toekomstig werk op het gebied van GPT-4 en vergelijkbare systemen zich kan richten op het verkennen van nieuwe toepassingen en domeinen en het begrijpen van de mechanismen en principes die aan hun intelligentie ten grondslag liggen. \\
 
-Naast de prestaties van GPT-4 hebben Elon Musk en andere experts opgeroepen tot een tijdelijke stop van de ontwikkeling van AI-systemen die GPT-4 kunnen overtreffen, vanwege potentiële risico's en onvoorziene gevolgen die dergelijke geavanceerde systemen met zich mee kunnen brengen \autocite{reuters_musk}. 
+Naast de prestaties van GPT-4 hebben Elon Musk en andere experts opgeroepen tot een tijdelijke stop van Large Language Models (LLM) zoals GPT-4 kunnen overtreffen, vanwege potentiële risico's en onvoorziene gevolgen die dergelijke geavanceerde systemen met zich mee kunnen brengen zonder \autocite{reuters_musk}. 
  
 \section{AI-gegenereerde kunst: tools en voorbeelden}
 \subsection{ Midjourney}
@@ -126,10 +140,12 @@ Stable Diffusion heeft een API waarvan gebruik van gemaakt kan worden. \\
 Binnen deze subsectie bespreek ik enkele toepassingen die gebruik maken van de eerder vermelde tools in punt 2.1/2.2 en 2.3.
 
 \subsubsection{NFT's}
-Een non-fungible token, beter bekend als een NFT, is een uniek digitaal object op een blockchain, meestal verbonden met speciale digitale content zoals foto's of muziek. Ze hebben een gigantische markt opgebouwd, waar individuele NFT's een waarde van miljoenen dollars kunnen bereiken \autocite{nft_whatisit}. Vele bedrijven of individuën hebben NFT's zoals Snoop Dogg of Coca Cola.
+Een non-fungible token, beter bekend als een NFT, is een uniek digitaal object op een blockchain, meestal verbonden met speciale digitale content zoals foto's of muziek. Ze hebben een gigantische markt opgebouwd, waar individuele NFT's een waarde van miljoenen dollars kunnen bereiken \autocite{nft_whatisit}. \\
+
+LLM's hebben het potentieel om de markt te verstoren op een manier die het menselijke aspect van NFT's kan wegnemen. In plaats van kunstenaars en creatievelingen die unieke digitale content maken, kunnen we een toekomst zien waarin AI de 'creator' wordt, wat de menselijke inspanning, creativiteit en originaliteit die traditioneel geassocieerd worden met kunst kan ondermijnen. 
 
 \subsubsection{Graphic Design}
-Binnen het domein van graphic design kunnen AI-tools zoals DALL-E en StyleGAN worden ingezet voor verschillende toepassingen. Zo kunnen ze bijvoorbeeld worden gebruikt om nieuwe verpakkingen, zoals cornflakesdozen, te ontwerpen door unieke en aantrekkelijke ontwerpen te genereren op basis van bestaande stijlen en trends. 
+Binnen het domein van graphic design kunnen AI-tools zoals DALL-E en StyleGAN worden ingezet voor verschillende toepassingen. Zo kunnen ze bijvoorbeeld worden gebruikt om nieuwe verpakkingen, zoals cornflakesdozen, te ontwerpen door unieke en aantrekkelijke ontwerpen te genereren op basis van bestaande stijlen en trends.  \\
 
 Daarnaast kunnen ze bedrijven helpen bij het creëren van opvallende en herkenbare logo's door verschillende concepten te genereren op basis van tekstbeschrijvingen of bestaande ontwerpelementen. 
 
@@ -157,6 +173,7 @@ Belangrijke zaken waarmee er rekening gehouden moet worden om een scraper te cre
 \end{itemize}
 
 \subsection{Ethische aspecten}
+\label{subsection:scraper-ethische-aspecten}
 Bij het uitvoeren van webscraping-activiteiten is het van belang om ethische overwegingen in acht te nemen. Webscraping kan verschillende ethische uitdagingen met zich meebrengen, zoals het respecteren van de privacy van gebruikers en het naleven van de regels en beperkingen van websites. Hier zijn enkele belangrijke ethische aspecten volgens \autocite{scrape_ethics} om rekening mee te houden tijdens het ontwikkelen van de scraper: 
 
 \begin{itemize}

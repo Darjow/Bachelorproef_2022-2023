@@ -88,7 +88,7 @@ url = {https://hbr.org/2023/03/generative-ai-will-enhance-not-erase-customer-ser
 }
 
 @Article{BIO2014,
-  author   = {Daniel Glez-Pena, Analia Lourenço, Hugo Lopez-Fernández, Miguel Reboiro-Jato},
+  author   = {Daniel Glez-Pena, Analia Lourenco, Hugo Lopez-Fernandez},
   date     = {2014},
   title    = {Web scraping technologies in an API world},
   number   = {5},
@@ -148,9 +148,10 @@ url = {https://arxiv.org/ftp/arxiv/papers/2304/2304.01503.pdf},
 }
 
 @Article{gpt_cn,
-  author = {Junjie YeF, Xuanting ChenF, Nuo XuF, Can ZuF},
+  author = {Junjie YeF, Xuanting ChenF, Nuo XuF},
   date   = {2023},
   title  = {A Comprehensive Capability Analysis of GPT-3 and GPT-3.5 Series Models},
+  url    = {https://arxiv.org/ftp/arxiv/papers/2303/2303.10420.pdf},
   url    = {https://arxiv.org/ftp/arxiv/papers/2303/2303.10420.pdf},
 }
 
@@ -184,14 +185,14 @@ url = {https://arxiv.org/pdf/2303.13375.pdf},
   organization = {Reuters},
 }
 
-@Article{notaro_art
+@Article{notaro_art,
   author = {Anna Notaro},
   date   = {2020},
   title  = {State-of-the-art: AI through the (artificial) Artist’s Eye},
   url    = {https://discovery.dundee.ac.uk/en/publications/state-of-the-art-ai-through-the-artificial-artists-eye},
 }
 
-@Online{consalves_art
+@Online{consalves_art,
   author = {Robert A. Consalves},
   date = {2021},
   title = {GANshare: Creating and Curating Art with AI for Fun and Profit},
@@ -199,7 +200,7 @@ url = {https://arxiv.org/pdf/2303.13375.pdf},
 
 }
 
-@Online{midjourney_art
+@Online{midjourney_art,
   author = {Midjourney},
   organization={midjourney},
   date = {2022},
@@ -219,6 +220,29 @@ url = {https://arxiv.org/pdf/2303.13375.pdf},
   date = {2022},
   title= {What is Non-fungible token (NFT)? A short discussion about NFT Terms used in NFT},
   url = {https://www.authorea.com/doi/full/10.22541/au.166490992.24247550}
+}
+
+@Article{gan_goodfellow,
+  title={Generative Adversarial Networks},
+  author={Goodfellow Ian, Jean Pouget-Abadie, Jean and Mirza},
+  journal={Communications of the ACM},
+  volume          = {63},
+  year={2020}
+}
+
+
+@Article{scrape_ethics,
+title={Legality and Ethics of Web Scraping},
+author={Vladk Krotov and Leiser Silva}
+
+}
+
+@Thesis{google_transformer,
+  author      = {Noam Shazeer and Ashish Vaswani and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and Łukasz Kaiser and Illia Polosukhin},
+  date        = {2017},
+  institution = {google},
+  title       = {Attention Is All You Need},
+  type        = {resreport},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
