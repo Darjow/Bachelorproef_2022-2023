@@ -1,0 +1,174 @@
+@Article{Salem2020,
+  author       = {Hamza Salem and Manuel Mazzara},
+  date         = {2020},
+  journaltitle = {Journal of Physics: Conference Series},
+  title        = {Pattern Matching-based scraping of news websites},
+  pages        = {6},
+  volume       = {1694},
+  abstract     = {Web Scraping is the process of extracting content from human-readable websites in order to import it into local storage such as databases or CSV Files. The process of data extraction and its design is time-consuming requiring an analysis of the website, data representation of the objects comprising its structure (DOM), HTML tags, and the Cascading Style Sheets (CSS) classes. To support this process we aim at providing automation. In this paper, we propose a pattern mining technique to scrap news and blog websites by recognizing title and body based on a content structure pattern. This approach consists of three steps, i.e.: extracting news website structure, constructing a pattern of HTML content, and implementing the pattern as a set of rules in web scraping. Our approach is a simple, general, and straightforward way to extract articles that consist of the title, the body of any blogs, or news websites.},
+}
+
+@Article{Borji2022,
+  author       = {Ali Borji},
+  date         = {2022},
+  journaltitle = {Computer Vision and Pattern Recognition},
+  title        = {Generated Faces in the Wild: Quantitative Comparison of Stable Diffusion, Midjourney and DALL-E 2},
+  abstract     = {The field of image synthesis has made great strides in the last couple of years. Recent
+models are capable of generating images with astonishing quality. Fine-grained evaluation of
+these models on some interesting categories such as faces is still missing. Here, we conduct a
+quantitative comparison of three popular systems including Stable Diffusion, Midjourney, and
+DALL-E 2 in their ability to generate photorealistic faces in the wild. We find that Stable
+Diffusion generates better faces than the other systems, according to the FID score. We also
+introduce a dataset of generated faces in the wild dubbed GFW, including a total of 15,076 faces.
+Furthermore, we hope that our study spurs follow-up research in assessing the generative models
+and improving them. Data and code are available at data and code, respectively.},
+}
+
+@MastersThesis{Lauri2019,
+  author      = {Kolehmainen Lauri},
+  date        = {2019},
+  institution = {Aalto University},
+  title       = {A web scraping system for extracting news articles.},
+}
+
+@Online{GoogleDocs,
+  author       = {Google},
+  date         = 2022,
+  organization = {Google},
+  title        = {Introduction to robots.txt},
+  url          = {https://developers.google.com/search/docs/crawling-indexing/robots/intro},
+}
+
+@Online{DallEWikipediaEN,
+  author       = {en.wikipedia.org},
+  date         = {2022},
+  organization = {Wikipedia},
+  title        = {DALL-E},
+  url          = {https://en.wikipedia.org/wiki/DALL-E},
+}
+
+@Online{DallEWikipediaNL,
+  author       = {nl.wikipedia.org},
+  date         = {2022},
+  organization = {nl.wikipedia.org: DALL-E},
+  title        = {DALL-E},
+  url          = {https://nl.wikipedia.org/wiki/DALL-E},
+}
+
+@Online{StableDifWikipediaEN,
+  author       = {en.wikipedia.org},
+  date         = 2022,
+  organization = {Wikipedia},
+  title        = {Stable Diffusion},
+  url          = {https://en.wikipedia.org/wiki/Stable_Diffusion},
+}
+
+@Online{SonixAI2021,
+  author       = {Sonix.ai},
+  date         = {2022},
+  title        = {Wat is generatief AI?},
+  url          = {https://sonix.ai/resources/nl/wat-is-generatief-ai/},
+  organization = {Sonix.ai},
+}
+
+@Online{HU2021,
+  author       = {Hogeschool Utrecht},
+  date         = {2021},
+  title        = {RobotReporter: Onderzoek naar generatieve AI-systemen},
+  url          = {https://www.hu.nl/onderzoek/projecten/robotreporter-onderzoek-naar-generatieve-ai-systemen},
+  organization = {Hogeschool Utrecht},
+}
+
+@Online{HBR2023,
+author = {Harvard Business Review},
+date = {2023},
+organization = {Harvard Business Review},
+title = {Generative AI Will Enhance, Not Erase, Customer Service Jobs},
+url = {https://hbr.org/2023/03/generative-ai-will-enhance-not-erase-customer-service-jobs},
+}
+
+@Article{BIO2014,
+  author   = {Daniel Glez-Pena, Analia Lourenco, Hugo Lopez-Fernandez},
+  date     = {2014},
+  title    = {Web scraping technologies in an API world},
+  number   = {5},
+  pages    = {788--797},
+  url      = {https://academic.oup.com/bib/article/15/5/788/2422275},
+  volume   = {15},
+  abstract = {Web services are the de facto standard in biomedical data integration. However, there are data integration scenarios that cannot be fully covered by Web services. A number of Web databases and tools do not support Web services, and existing Web services do not cover for all possible user data demands. As a consequence, Web data scraping, one of the oldest techniques for extracting Web contents, is still in position to offer a valid and valuable service to a wide range of bioinformatics applications, ranging from simple extraction robots to online meta-servers. This article reviews existing scraping frameworks and tools, identifying their strengths and limitations in terms of extraction capabilities. The main focus is set on showing how straightforward it is today to set up a data scraping pipeline, with minimal programming effort, and answer a number of practical needs. For exemplification purposes, we introduce a biomedical data extraction scenario where the desired data sources, well-known in clinical microbiology and similar domains, do not offer programmatic interfaces yet. Moreover, we describe the operation of WhichGenes and PathJam, two bioinformatics meta-servers that use scraping as means to cope with gene set enrichment analysis.},
+  journal  = {Briefings in Bioinformatics},
+  year     = {2014},
+}
+
+@Article{BSFOR2015,
+  author  = {Chunmei Zheng, Guomei He, Zuojie Peng},
+  date    = {2015},
+  title   = {A Study of Web Information Extraction Technology Based on Beautiful Soup},
+  url     = {http://www.jcomputers.us/vol10/jcp1006-03.pdf},
+  journal = {Journal of Computers},
+  year    = {2015},
+}
+
+@Online{BS4Documentation,
+  author       = {Leonard Richardson},
+  title        = {Beautiful Soup Documentation},
+  year         = {2023},
+  organization = {Crummy},
+  url          = {https://www.crummy.com/software/BeautifulSoup/bs4/doc/},
+}
+
+@Online{nytimes_gpt3,
+  author = {Cade Metz},
+  date   = {2020},
+  title  = {Meet GPT-3. It Has Learned to Code (and Blog and Argue).},
+  url    = {https://www.nytimes.com/2020/11/24/science/artificial-intelligence-ai-gpt3.html},
+}
+
+@Online{reuters_chatgpt,
+author = {Krystal Hu},
+date = {2023},
+title = {ChatGPT sets record for fastest-growing user base: analyst note},
+url = {https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/},
+}
+
+@Online{wiki_gpt3,
+author = {Wikipedia},
+date = {2021},
+title = {GPT-3},
+url = {https://en.wikipedia.org/wiki/GPT-3},
+organization = {Wikipedia},
+}
+
+@MastersThesis{gpt_nappier,
+author = {Ian Nappier},
+pages           = {30},
+date = {2023},
+title = {GPT-4 to GPT-3.5: 'Hold My Scalpel' – A Look at the Competency of OpenAI’s GPT on the Plastic Surgery In-Service Training Exam},
+url = {https://arxiv.org/ftp/arxiv/papers/2304/2304.01503.pdf},
+}
+
+@Article{gpt_cn,
+  author = {Junjie YeF, Xuanting ChenF, Nuo XuF},
+  date   = {2023},
+  title  = {A Comprehensive Capability Analysis of GPT-3 and GPT-3.5 Series Models},
+  url    = {https://arxiv.org/ftp/arxiv/papers/2303/2303.10420.pdf},
+  url    = {https://arxiv.org/ftp/arxiv/papers/2303/2303.10420.pdf},
+}
+
+@Online{gpt_openai,
+author = {OpenAI},
+date = {2023},
+title = {GPT-4},
+url = {https://openai.com/product/gpt-4/},
+organization = {OpenAI},
+}
+
+@Article{gpt_micai,
+author = {Microsoft, OpenAI},
+date = {2023},
+title = {Capabilities of GPT-4 on Medical Challenge Problems},
+url = {https://arxiv.org/pdf/2303.13375.pdf},
+}
+
+@Article{gtp_agi,
+  author = {Microsoft Research},
