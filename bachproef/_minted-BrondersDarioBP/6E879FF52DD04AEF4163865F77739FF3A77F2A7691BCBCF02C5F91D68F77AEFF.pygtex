@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{scraper.threads.abstractThread} \PYG{k+kn}{import} \PYG{n}{AbstractThread}
+\PYG{k+kn}{from} \PYG{n+nn}{scraper.util.volatileDictionary} \PYG{k+kn}{import} \PYG{n}{VolatileDict}
+\PYG{k+kn}{from} \PYG{n+nn}{bs4} \PYG{k+kn}{import} \PYG{n}{BeautifulSoup}
+\PYG{k+kn}{import} \PYG{n+nn}{requests}
+
+\PYG{k}{class} \PYG{n+nc}{DeMorgenThread}\PYG{p}{(}\PYG{n}{AbstractThread}\PYG{p}{):}
+  \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{volatile\PYGZus{}dict}\PYG{p}{:} \PYG{n}{VolatileDict}\PYG{p}{):}
+    \PYG{n+nb}{super}\PYG{p}{()}\PYG{o}{.}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n}{volatile\PYGZus{}dict}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s2}{ \PYGZpc{}B \PYGZpc{}Y\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}h1\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}artstyle\PYGZus{}\PYGZus{}header\PYGZhy{}title\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}artstyle\PYGZus{}\PYGZus{}production\PYGZus{}\PYGZus{}datetime\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}https://www.demorgen.be\PYGZdq{}}\PYG{p}{,} \PYG{p}{[])}
+
+  
+  \PYG{k}{def} \PYG{n+nf}{on\PYGZus{}start}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+    \PYG{n+nb}{super}\PYG{p}{()}\PYG{o}{.}\PYG{n}{on\PYGZus{}start}\PYG{p}{()}
+    \PYG{n}{response} \PYG{o}{=} \PYG{n}{requests}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{base\PYGZus{}url}\PYG{p}{,} \PYG{n}{headers} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{headers}\PYG{p}{)}
+    \PYG{n}{bs} \PYG{o}{=} \PYG{n}{BeautifulSoup}\PYG{p}{(}\PYG{n}{response}\PYG{o}{.}\PYG{n}{text}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}html.parser\PYGZdq{}}\PYG{p}{)}
+    \PYG{n}{nav} \PYG{o}{=} \PYG{n}{bs}\PYG{o}{.}\PYG{n}{find\PYGZus{}all}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}a\PYGZdq{}}\PYG{p}{,} \PYG{n}{attrs}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}class\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}app\PYGZhy{}navigation\PYGZus{}\PYGZus{}link\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{routes} \PYG{o}{=} \PYG{p}{[}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{base\PYGZus{}url} \PYG{o}{+} \PYG{n}{i}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}href\PYGZdq{}}\PYG{p}{]} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{nav}\PYG{p}{]}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{routes}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{base\PYGZus{}url} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}/nieuws\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{routes}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{base\PYGZus{}url} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}/snelnieuws\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

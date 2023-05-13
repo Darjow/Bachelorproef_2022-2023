@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{scraper.threads.abstractThread} \PYG{k+kn}{import} \PYG{n}{AbstractThread}
+\PYG{k+kn}{from} \PYG{n+nn}{scraper.util.volatileDictionary} \PYG{k+kn}{import} \PYG{n}{VolatileDict}
+
+\PYG{k}{class} \PYG{n+nc}{HLNThread}\PYG{p}{(}\PYG{n}{AbstractThread}\PYG{p}{):}
+
+  \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{volatile\PYGZus{}dict}\PYG{p}{:}\PYG{n}{VolatileDict}\PYG{p}{):}
+    \PYG{n+nb}{super}\PYG{p}{()}\PYG{o}{.}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n}{volatile\PYGZus{}dict}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s2}{\PYGZhy{}\PYGZpc{}m\PYGZhy{}\PYGZpc{}y, \PYGZpc{}H:\PYGZpc{}M\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}h1\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}article\PYGZus{}\PYGZus{}title\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}time\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}article\PYGZus{}\PYGZus{}time\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}https://www.hln.be\PYGZdq{}}\PYG{p}{,} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}/buitenland/\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}/binnenland/\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}/vtm\PYGZhy{}nieuws/\PYGZdq{}}\PYG{p}{])}
+\end{Verbatim}
