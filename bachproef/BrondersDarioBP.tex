@@ -12,9 +12,31 @@
 % - If you write your thesis in English (remark: only possible after getting
 %   explicit approval!), remove the option "dutch," or replace with "english".
 
+\usepackage{bera}% optional: just to have a nice mono-spaced font
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+\usepackage{dramatist}
 \usepackage{lipsum} % For blind text, can be removed after adding actual content
 \usepackage{graphicx}
+\usepackage{attachfile}
 
+%% for adding conversations: 
+\usepackage{xparse}
+\usepackage{enumitem}
+
+\newlength{\transcriptlen}
+
+\NewDocumentCommand {\setspeaker} { mo } {%
+    \IfNoValueTF{#2}
+    {\expandafter\newcommand\csname#1\endcsname{\item[#1:]}}%
+    {\expandafter\newcommand\csname#1\endcsname{\item[#2:]}}%
+    \IfNoValueTF{#2}
+    {\settowidth{\transcriptlen}{#1}}%
+    {\settowidth{\transcriptlen}{#2}}%
+}
 %% Pictures to include in the text can be put in the graphics/ folder
 \graphicspath{{graphics/}}
 
@@ -182,19 +204,25 @@
 \chapter{Onderzoeksvoorstel}
 
 Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat vooraf werd beoordeeld door de promotor. Dat voorstel is opgenomen in deze bijlage.
+\input{../voorstel/voorstel-inhoud}
 
+
+\chapter{Bijlagen}
+\input{./bijlage.tex}
 %% TODO: 
 %\section*{Samenvatting}
 
 % Kopieer en plak hier de samenvatting (abstract) van je onderzoeksvoorstel.
 
-% Verwijzing naar het bestand met de inhoud van het onderzoeksvoorstel
-\input{../voorstel/voorstel-inhoud}
+
+
 
 %%---------- Andere bijlagen --------------------------------------------------
 % TODO: Voeg hier eventuele andere bijlagen toe. Bv. als je deze BP voor de
 % tweede keer indient, een overzicht van de verbeteringen t.o.v. het origineel.
 %\input{...}
+
+
 
 %%---------- Backmatter, referentielijst ---------------------------------------
 

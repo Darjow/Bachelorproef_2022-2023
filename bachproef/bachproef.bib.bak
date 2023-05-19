@@ -245,4 +245,13 @@ author={Vladk Krotov and Leiser Silva}
   type        = {resreport},
 }
 
+@Reference{gpt_millie,
+  date   = {2023},
+  title  = {ChatGPT Sprints to One Million Users},
+  author = {Statista},
+}
+
+@Article{,
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

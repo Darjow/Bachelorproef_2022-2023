@@ -1,6 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{def} \PYG{n+nf}{on\PYGZus{}start}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
-  \PYG{n}{response} \PYG{o}{=} \PYG{n}{requests}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{base\PYGZus{}url}\PYG{p}{,} \PYG{n}{headers} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{headers}\PYG{p}{)}
-  \PYG{n}{bs} \PYG{o}{=} \PYG{n}{BeautifulSoup}\PYG{p}{(}\PYG{n}{response}\PYG{o}{.}\PYG{n}{text}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}html.parser\PYGZdq{}}\PYG{p}{)}
-  \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{articles} \PYG{o}{=} \PYG{n}{bs}\PYG{o}{.}\PYG{n}{find\PYGZus{}all}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}article\PYGZdq{}}\PYG{p}{)[:}\PYG{l+m+mi}{20}\PYG{p}{]}
-\end{Verbatim}

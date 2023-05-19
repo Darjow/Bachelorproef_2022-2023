@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{should\PYGZus{}scrape\PYGZus{}article}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{article}\PYG{p}{):}
+  \PYG{n}{a\PYGZus{}href} \PYG{o}{=} \PYG{n}{article}\PYG{o}{.}\PYG{n}{find}\PYG{p}{(}\PYG{n}{name}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}a\PYGZdq{}}\PYG{p}{)}
+  \PYG{n}{temp} \PYG{o}{=} \PYG{k+kc}{None}
+
+  \PYG{k}{if} \PYG{n}{a\PYGZus{}href} \PYG{o}{==} \PYG{k+kc}{None}\PYG{p}{:}
+    \PYG{k}{return} \PYG{k+kc}{False}
+
+  \PYG{k}{if} \PYG{n}{a\PYGZus{}href}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}href\PYGZdq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{startswith}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}}\PYG{p}{):}
+    \PYG{n}{temp} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{base\PYGZus{}url} \PYG{o}{+} \PYG{n}{a\PYGZus{}href}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}href\PYGZdq{}}\PYG{p}{]}
+  
+  \PYG{k}{if} \PYG{n}{temp} \PYG{o}{!=} \PYG{k+kc}{None}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n+nb}{any}\PYG{p}{(}\PYG{n}{route} \PYG{o+ow}{in} \PYG{n}{temp} \PYG{k}{for} \PYG{n}{route} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{routes}\PYG{p}{):}
+      \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{article\PYGZus{}link} \PYG{o}{=} \PYG{n}{temp}
+      \PYG{k}{return} \PYG{k+kc}{True}
+    
+  \PYG{k}{if} \PYG{n+nb}{any}\PYG{p}{(}\PYG{n}{route} \PYG{o+ow}{in} \PYG{n}{a\PYGZus{}href}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}href\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{)} \PYG{k}{for} \PYG{n}{route} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{routes}\PYG{p}{):}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{article\PYGZus{}link} \PYG{o}{=} \PYG{n}{a\PYGZus{}href}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}href\PYGZdq{}}\PYG{p}{]}
+    \PYG{k}{return} \PYG{k+kc}{True}   
+\end{Verbatim}

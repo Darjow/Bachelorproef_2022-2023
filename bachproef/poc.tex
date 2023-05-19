@@ -52,7 +52,7 @@ Nu dat we deze informatie hebben. Kunnen we beginnen aan de implementatie van de
 \subsection{Implementatie}
 \subsubsection{Thread-safe Dictionary}
 Om ervoor te zorgen dat de gescrapete data veilig wordt opgeslagen, beginnen we de implementatie met het maken van een thread-safe dictionary.
-\begin{pythoncode}{../../../workspace/src/scraper/util/volatileDictionary.py}
+\begin{pythoncode}{../../../workspace/paper/scraper/util/volatileDictionary.py}
 Deze thread-safe dictionary zal de opslag van de gescrapete data beheren en ervoor zorgen dat er geen problemen ontstaan tijdens het wegschrijven van de gescrapete data.
 \end{pythoncode}
 
@@ -68,7 +68,7 @@ De AbstractThread-klasse bevat het volgende:
 
 Laten we de \textbf{constructor} van de AbstractThread-klasse bespreken:
 
-\begin{pythoncode}{../../../workspace/src/paper/abstractThreadCTR.py}
+\begin{pythoncode}{../../../workspace/paper/abstractThreadCTR.py}
     In de constructor initialiseren we de gemeenschappelijke eigenschappen die vereist zijn door de specifieke threads. Deze eigenschappen omvatten:
 \end{pythoncode}
 
@@ -87,19 +87,19 @@ Laten we de \textbf{constructor} van de AbstractThread-klasse bespreken:
 
 Daarnaast bevat de AbstractThread-klasse ook verschillende methoden die het scrapen mogelijk maken. Laten we deze methoden bespreken:
 
-\begin{pythoncode}{../../../workspace/src/paper/abstractThreadONSTART.py}
+\begin{pythoncode}{../../../workspace/paper/abstractThreadONSTART.py}
  Deze methode stuurt een initiële aanvraag naar de base\_url om de eerste 20 artikelen op te halen.
 \end{pythoncode}
 
-\begin{pythoncode}{../../../workspace/src/paper/abstractThreadSTARTSCRAPING.py}
+\begin{pythoncode}{../../../workspace/paper/abstractThreadSTARTSCRAPING.py}
 Deze methode voert de on\_start()-methode uit, die de initiële artikelen ophaalt. Vervolgens gaat het door met het scrapen van artikelen zolang er artikelen in de lijst zijn. Elk artikel wordt gecontroleerd met behulp van de should\_scrape\_article()-methode en als het aan de voorwaarden voldoet, wordt het gescraped met behulp van de scrape\_article()-methode.
 \end{pythoncode}
 
-\begin{pythoncode}{../../../workspace/src/paper/abstractThreadSHOULDSCRAPE.py}
+\begin{pythoncode}{../../../workspace/paper/abstractThreadSHOULDSCRAPE.py}
 Deze methode controleert of de URL van een artikel overeenkomt met een van de opgegeven base\_urls. Als dit het geval is, wordt de article\_link ingesteld en wordt True geretourneerd om aan te geven dat het artikel moet worden gescraped.
 \end{pythoncode}
 
-\begin{pythoncode}{../../../workspace/src/paper/abstractThreadSCRAPE.py}
+\begin{pythoncode}{../../../workspace/paper/abstractThreadSCRAPE.py}
     Deze methode haalt de inhoud van de article\_link op met behulp van een GET-verzoek en de opgegeven headers. Vervolgens worden de datum en titel geëxtraheerd op basis van de opgegeven HTML-klassen. Als de geëxtraheerde datum vandaag is, wordt de append\_to\_dict()-methode aangeroepen om het artikel op te slaan in de thread-safe dictionary. \\
     
     Na elke request naar een bepaald artikel wordt er een korte sleep geïmplementeerd zodat we niet overdrijven in het aantal request dat we versturen om de server niet te overbelasten zoals besproken in punt \ref{subsection:scraper-ethische-aspecten}.
@@ -110,20 +110,20 @@ De AbstractThread-klasse biedt een basis voor het implementeren van de specifiek
 \subsubsection{HLNThread}
     De HLNThread wordt aangemaakt met de volgende code:
     
-\begin{pythoncode}{../../../workspace/src/paper/hlnThread.py}
+\begin{pythoncode}{../../../workspace/paper/hlnThread.py}
     De HLNThread wordt geïnitialiseerd met de specifieke eigenschappen die vereist zijn voor het scrapen van artikelen op de HLN-website. Het base\_url is "https://www.hln.be" en de routes zijn ["/buitenland", "/binnenland", "/vtm-nieuws"]. De HTML-klassen voor de titel en de datum worden ook opgegeven.
 \end{pythoncode}
 
 \subsubsection{De Morgen Thread}
     De DeMorgenThread wordt aangemaakt met de volgende code:
 
-\begin{pythoncode}{../../../workspace/src/paper/deMorgenThread.py}
+\begin{pythoncode}{../../../workspace/paper/deMorgenThread.py}
     De DeMorgenThread wordt geïnitialiseerd met de specifieke eigenschappen die vereist zijn voor het scrapen van artikelen op de De Morgen-website. De base\_url is "https://www.demorgen.be" en de routes moeten nog worden toegevoegd, afhankelijk van de specifieke routes op de website van De Morgen doen we dit binnenin de on\_start()-methode om zo steeds de up-to-date routes te hebben. De HTML-klassen voor de titel en de datum worden ook opgegeven.x
 \end{pythoncode}
 
 \subsection{Uitkomst}
 Om de uitkomst hiervan te testen, maken we een nieuw bestand aan genaamd \_\_main\_\_.py en gebruiken we dit bestand als het startpunt van onze applicatie. Hieronder vind je de inhoud van \_\_main\_\_.py:
-\begin{pythoncode}{../../../workspace/src/paper/scraperMain.py}
+\begin{pythoncode}{../../../workspace/paper/scraperMain.py}
 In de main functie starten we het scrapingproces door de start\_scraping()-methode aan te roepen. De gescrapete gegevens worden opgeslagen en geprint op de console. \\
 
 De start\_scraping functie initialiseert een VolatileDict object om de gescrapete gegevens op te slaan. Vervolgens maken we instanties van de specifieke threads en voegen we ze toe aan de lijst threads. We gebruiken een ThreadPoolExecutor om de threads parallel uit te voeren en slaan de resultaten op in de futures lijst. \\
@@ -133,40 +133,110 @@ Na het voltooien van alle threads halen we de gescrapete gegevens op met behulp 
 Dit is een basisimplementatie van het startpunt van de applicatie, die in volgende stappen wordt aangepast en uitgebreid.
 \end{pythoncode}
 
-Hieronder vindt je het resultaat van Zaterdag 13/05/2023, 16:08u.
+Hieronder vindt je het resultaat van Vrijdag 19/05/2023, 20:07u.
 \begin{listing}[H]
     \begin{minted}[breaklines]{json}
 {
-    "https://www.demorgen.be": [
-    "Onze journalist in Liverpool over finale Songfestival: ‘Realistisch om te stellen dat Gustaph in de top tien kan eindigen’",
-    "Rusland erkent dat leger zich terugtrekt rond Bachmoet, Wagner-baas scherp: ‘Een nederlaag’",
-    "Live - Oekraïne. Russische drone-aanvallen en explosies in het westen van Oekraïn, Zelensky reist naar Duitsland",
-    "‘Stop met delen van herkenbare beelden’: parket doet oproep na treinongeval in Bilzen",
-    "Bart De Wever (N-VA): ‘Na verkiezingen van 2024 snel minikabinet vormen met PS’",
-    "Delhaize dient klacht in nadat verschillende winkels gevandaliseerd zijn",
-    "‘Je kan het Aster Nzeyimana moeilijk kwalijk nemen dat hij vertrekt’",
-    "Sam Smith in het Sportpaleis: een romantische relnicht die zich richt op cabaret en hartkamers",
-    "‘Ik heb drie militaire staatsgrepen en twee couppogingen meegemaakt. En toch heb ik nooit zoiets gezien als dit’",
-    "Zou Oekraïne het West-Duitsland van de 21ste eeuw kunnen worden?"
-    ],
     "https://www.hln.be": [
-    "Russische helikopter en gevechtsvliegtuig neergestort nabij Oekraïense grens: circulerende beelden tonen hoe helikopter ontploft in de lucht",
-    "REPORTAGE. Hoe de geheimen van de populairste treinreis van Turkije zich op 26 uur ontrafelen: “Alsof ik in een detective van Agatha Christie zit”",
-    "Man met overgesneden keel vlucht nog naar huis van buren maar zakt daar in elkaar"
+    "Nederlander (37) overlijdt na ongeval met ontplofte petanquebal tijdens vrijgezellenfeest in Stavelot",
+    "EXCLUSIEVE ANALYSE. “Oekraïne heeft 4 mirakels nodig”",
+    "Staatssecretaris Bertrand spreekt straffe taal tegen banken: “Maar de overheid moet zelf ook het goede voorbeeld geven”",
+    "“Russisch leger rekruteerde dit jaar al bijna 120.000 soldaten”",
+    "Barack Obama niet meer welkom in Rusland: inreisverbod tegen voormalige president en 499 andere Amerikanen",
+    "Opmars Aziatische hoornaar niet meer te stuiten in Vlaanderen: \"Kwestie van tijd voor er doden vallen”",
+    "Nederlander (37) overlijdt na ongeval met ontplofte petanquebal tijdens vrijgezellenfeest in Stavelot",
+    "Poetins geheime bunkercomplex onder gigantisch paleis aan Zwarte Zee onthuld: zo ziet het eruit"
+    ],
+    "https://www.demorgen.be": [
+    "Voor de mensen achteraan in de zaal: het is absoluut zeker dat de klimaatverandering tot meer extreme weersituaties leidt",
+    "Pedagoog Pedro De Bruyckere: ‘Leerlingen in Engeland en Ierland zitten ook constant op hun smartphone, en zij gingen erop vooruit’",
+    "Transgender activiste Jenna Boeve: ‘Als ik in lingerie naar de Pride ga, is dat ook een vorm van protest’",
+    "Waarom meer geliefden hebben (niet) altijd beter is: ‘Fantastisch om je partner te vertellen dat je verliefd bent op een ander’",
+    "Jane Fonda: ‘Franse regisseur vroeg me om met hem naar bed te gaan ‘om te zien hoe mijn orgasmes waren’ voor een rol’",
+    "Enorme gewicht van wolkenkrabbers brengt New York in problemen bij verwachte zeespiegelstijging",
+    "Rubio wint bergrit van 74 kilometer, wapenstilstand onder favorieten",
+    "Britse telecomreus vervangt 10.000 jobs door AI",
+    "‘VS zetten licht op groen voor training Oekraïense piloten in westerse gevechtsvliegtuigen’",
+    "Live - Oekraïne. Rusland vaardigt arrestatiebevel uit tegen aanklager Internationaal Strafhof die Poetin wil laten arresteren",
+    "‘Helft leerlingen secundair onderwijs heeft moeite met lezen’",
+    "Erdogan prijst ‘speciale relatie’ met Poetin: ‘Rusland en Turkije hebben elkaar nodig op alle vlakken’",
+    "‘Ook aan hun kant ontploft er heel wat’: Oekraïne lijkt te dralen met zijn tegenoffensief",
+    "‘VS zetten licht op groen voor training Oekraïense piloten in westerse gevechtsvliegtuigen’"
     ]
 }
 
     \end{minted}
-
+    \label{bijlage:json-input}
+    \captionof{figure}{De gescrapete json-data op vrijdag 19 mei 20:07}
 \end{listing}
 
 \section{GPT}
 \subsection{Inleiding}
-Praten over prompten
+Om GPT te kunnen gebruiken zullen we de API gebruiken van OpenAI, deze is prijzig zeker voor GPT-4, dus zullen we gebruik maken van GPT-3.5 binnen dit onderzoek wat neerkomt op ongeveer \$0.10 per request.  \autocite{gpt_pricing}. \\
+
+Volgens de API kan GPT verder gaan op een conversatie door gebruik te maken van een dialoog.  \\
+
+De implementatie zal ervoor zorgen dat we een conversatie starten met GPT en hem vragen om een prompt te retourneren zoals: 'Thema en/of gevoel en/of onderwerp geschilderd door: ... '.  
+
 \subsection{Implementatie}
-jjj
+\subsubsection{Config}
+Om gebruik te kunnen maken van de API hebben we een API key nodig. Na het genereren van een key op de website kunnen we deze in een .env file stoppen en deze gebruiken binnen onze config. Hieronder vind je de implementatie van de config. 
+\begin{pythoncode}{../../../workspace/paper/openAI/util/config.py}
+\end{pythoncode}
+
+\subsubsection{RequestHandler}
+Omdat we voor verschillende use-cases de API zullen gebruiken zal er een requesthandler voorzien worden. Deze requesthandler zal de api key van openAI instellen en de requests uitvoeren gericht naar openAI. Hieronder vind je de code van deze klasse. 
+\begin{pythoncode}{../../../workspace/paper/openAI/util/openairequesthandler.py}
+\end{pythoncode}
+
+\subsubsection{ChatGPT}
+Als laatste zullen we een klasse voorzien die alle communicatie regelt met GPT, we zullen deze ChatGPT heten. Deze klasse zal een conversatie starten met GPT en hem steeds bevragen om te reageren op de conversatie. Hij zal tenslotte de gescrapete data ontvangen en de prompt retourneren voor Dall-E. \\
+De code wordt hieronder geïllustreerd. 
+\begin{pythoncode}{../../../workspace/paper/openAI/chatgpt/chatgpt.py}
+\end{pythoncode}
 \subsection{Uitkomst}
-vertellen wat de uitkomst is van de prompts, en dat we dit nu kunnen gebruiken om een schilderij te genereren.
+De uitkomst hiervan is zeer verschillend, met de gescrapete data terug te vinden in de uitkomst van de webscraper krijg je steeds een verschillend uitkomst.  
+Hier is één van de conversaties:
+\begin{drama}
+    \Character{Applicatie:}{app}
+    \Character{GPT-3.5:}{gpt}
+    
+    \appspeaks{ Ik zou graag een kunstwerk willen genereren met dall-e gebaseerd op de hoogtepunten van vandaag. 
+        Ik heb enkele artikels gevonden van vandaag, en deze gegroepeerd per url.
+        Ik heb enkel de titel van het artikel opgeslaan. 
+        Hoe eerder ze voorkomen hoe belangrijker ze zijn.}
+    
+    \gptspeaks{Helaas ben ik als AI taalmodel niet in staat om toegang te krijgen tot het internet om webinhoud te scannen. Wanneer u toegang heeft tot de inhoud van de artikelen, kunt u deze naar mij sturen en kan ik proberen om op basis van deze informatie een kunstwerk te genereren met dall-e.}
+    
+    \appspeaks{Welke artikels zijn er het belangrijkst volgens jou, rekeninghoudend met vorige criteria. 
+        Hieronder vind je de artikels in json formaat, gegroepeerd per url van belangrijk naar minder belangrijk. <json data gescraped met webscraper>}
+    
+    
+    \gptspeaks{Als AI taalmodel kan ik geen subjectieve waarden toekennen aan de artikels. Echter, op basis van de frequentie van de urls kunnen we afleiden dat de artikels van https://www.hln.be belangrijker zijn dan die van https://www.demorgen.be. Binnen de artikelen van https://www.hln.be zijn de artikels over het ongeval met de ontplofte petanquebal, de rekruten van het Russische leger, en de onthulling van Poetins geheime bunkercomplex onder het gigantisch paleis aan de Zwarte Zee de belangrijkste.}
+    
+    \appspeaks{Als je voor mij hier één kernzin kan uithalen; een samenvatting. Welke zou het dan zijn?}
+    
+    \gptspeaks{Op basis van de artikels van https://www.hln.be, kan als kernzin samengevat worden dat er een Nederlander is overleden na een ongeval met een ontplofte petanquebal tijdens een vrijgezellenfeest in Stavelot en dat Rusland bijna 120.000 soldaten heeft gerekruteerd dit jaar, terwijl ook de onthulling van Poetins geheime bunker onder het gigantisch paleis aan de Zwarte Zee heeft plaatsgevonden.}
+    
+    \appspeaks{Maak voor mij een kernboodschap op basis van voorgaand JSON. Houd de boodschap beperkt zodat het zeker duidelijk is in het kunstwerk.}
+    
+    \gptspeaks{Op basis van de artikels in het JSON-bestand zou de kernboodschap van het gegenereerde kunstwerk als volgt kunnen zijn: "Belangrijke gebeurtenissen van vandaag omvatten een dodelijk ongeval met een petanquebal, de rekrutering van 120.000 soldaten door het Russische leger en de onthulling van Poetins geheime bunker."}
+    
+    \appspeaks{Ik zou dit nu graag laten genereren door dall-e om een kunstwerk te krijgen. Wat zou een goede prompt kunnen zijn die een kernboodschap weergeeft van de artikels? Vergeet geen schilder en stijl erbij te zeggen.}
+    
+    \gptspeaks{Een prompt die de kernboodschap van de artikels weergeeft en geschikt zou kunnen zijn voor een kunstwerk gegenereerd door DALL-E zou kunnen luiden: "Een foto/fantasiebeeld van een explosieve petanquebal, gecombineerd met het beeld van een groot paleis aan de Zwarte Zee dat een geheime bunker herbergt, terwijl Russische soldaten rekruteren. 'geschilderd door Salvador Dali'."}
+    
+    \appspeaks{Reageer enkel met een prompt en zet deze tussen quotes zet er ook bij door welke kunstenaar deze is geschilderd.}
+    
+    \gptspeaks{Een surrealistisch tafereel van een reusachtige petanquebal die een geheimzinnig paleis overhoop gooit, terwijl een stoet van Russische soldaten marcheert. Dit alles geschilderd in de kenmerkende, kleurrijke stijl van Salvador Dalí}
+    
+    \appspeaks{Op basis van welke kernartikels heb je dit gehaald?}
+    
+    \gptspeaks{Dit kunstwerk is gebaseerd op de drie belangrijkste artikelen zoals eerder vermeld, namelijk het ongeval met de petanquebal op een vrijgezellenfeest in Stavelot, de rekrutering van bijna 120.000 soldaten door het Russische leger en de onthulling van Poetins geheime bunkercomplex onder het paleis aan de Zwarte Zee.} \\ \\
+\end{drama}
+    \noindent
+    Op basis van de prompt kunnen we wel degelijk het nieuws herkennen van vandaag. Laten we kijken of dit nu ook een positief resultaat geeft binnen Dall-E.
+
 
 \section{DALL-E}
 \subsection{Inleiding}
@@ -174,7 +244,7 @@ Kort nog eens de moeilijkheden uitleggen (interpretatie etc.)
 \subsection{Implementatie}
 Kort uitleggen
 \subsection{Resultaat}
-...
+.
 \begin{listing}[H]
 \begin{minted}[breaklines, style=solarized-dark]{python}
    # This is a random comment

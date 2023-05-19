@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{dotenv} \PYG{k+kn}{import} \PYG{n}{load\PYGZus{}dotenv}
+\PYG{k+kn}{import} \PYG{n+nn}{os}
+
+\PYG{n}{load\PYGZus{}dotenv}\PYG{p}{()}
+
+\PYG{k}{def} \PYG{n+nf}{api\PYGZus{}key}\PYG{p}{():}
+  \PYG{k}{return} \PYG{n}{os}\PYG{o}{.}\PYG{n}{environ}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}OPENAI\PYGZus{}API\PYGZus{}KEY\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}
