@@ -1,7 +1,7 @@
 \chapter{\IfLanguageName{dutch}{proof-of-concept}{proof-of-concept}}%
 \label{ch:proof-of-concept}
 \section{Inleiding}
-In dit hoofdstuk bespreken we de implementatie van het proof-of-concept. We zullen elke fase van het proces in detail bespreken en de implementatie van de bijbehorende componenten toelichten. Hierbij zullen we ook de uitkomsten van elke fase beschrijven en hoe deze kunnen gebruikt worden in de volgende fase. \\
+In dit hoofdstuk bespreken we de implementatie van het proof-of-concept. We bespreken elke fase van het proces in detail en de implementatie van de bijbehorende componenten toelichten. Hierbij zullen we ook de uitkomsten van elke fase beschrijven en hoe deze kunnen gebruikt worden in de volgende fase. \\
 
 \section{Webscraper}
 \subsection{Algemene Eisen}
@@ -121,6 +121,12 @@ De AbstractThread-klasse biedt een basis voor het implementeren van de specifiek
     De DeMorgenThread wordt geïnitialiseerd met de specifieke eigenschappen die vereist zijn voor het scrapen van artikelen op de De Morgen-website. De base\_url is "https://www.demorgen.be" en de routes moeten nog worden toegevoegd, afhankelijk van de specifieke routes op de website van De Morgen doen we dit binnenin de on\_start()-methode om zo steeds de up-to-date routes te hebben. De HTML-klassen voor de titel en de datum worden ook opgegeven.x
 \end{pythoncode}
 
+\subsubsection{Uitvoering}
+Om dit nu allemaal te kunnen uitvoeren zullen we een scraper klasse maken, die de verschillende threads initializeerd en de uitkomst hiervan retourneerd. De implementatie hiervan is als volgt: 
+\begin{pythoncode}{../../../workspace/paper/scraper.py}
+    Hiervoor wordt gebruikt gemaakt van een \emph{ThreadPoolExecutor}. Om de threads te runnen en de uitkomst hiervan als future terug te krijgen. Als uitkomst hiervan wordt de dictionary ge-retourneerd.
+\end{pythoncode}
+
 \subsection{Uitkomst}
 Om de uitkomst hiervan te testen, maken we een nieuw bestand aan genaamd \_\_main\_\_.py en gebruiken we dit bestand als het startpunt van onze applicatie. Hieronder vind je de inhoud van \_\_main\_\_.py:
 \begin{pythoncode}{../../../workspace/paper/scraperMain.py}
@@ -172,41 +178,45 @@ Hieronder vindt je het resultaat van Vrijdag 19/05/2023, 20:07u.
 
 \section{GPT}
 \subsection{Inleiding}
-Om GPT te kunnen gebruiken zullen we de API gebruiken van OpenAI, deze is prijzig zeker voor GPT-4, dus zullen we gebruik maken van GPT-3.5 binnen dit onderzoek wat neerkomt op ongeveer \$0.10 per request.  \autocite{gpt_pricing}. \\
+Om GPT te kunnen gebruiken, zullen we de API van OpenAI gebruiken. Deze API kan prijzig zijn, vooral voor GPT-4. Daarom zullen we binnen dit onderzoek gebruik maken van GPT-3.5, wat neerkomt op ongeveer \$0.10 per verzoek \autocite{gpt_pricing}.
 
-Volgens de API kan GPT verder gaan op een conversatie door gebruik te maken van een dialoog.  \\
+Volgens de API kan GPT verdergaan in een conversatie door gebruik te maken van een dialoog.
 
-De implementatie zal ervoor zorgen dat we een conversatie starten met GPT en hem vragen om een prompt te retourneren zoals: 'Thema en/of gevoel en/of onderwerp geschilderd door: ... '.  
+De implementatie zal ervoor zorgen dat we een conversatie starten met GPT en hem vragen om een prompt te retourneren, zoals: 'Thema en/of gevoel en/of onderwerp geschilderd door: ...'. We zullen hiervoor de OpenAI Python-bibliotheek gebruiken, die beschikbaar is op GitHub\footnote{\url{https://github.com/openai/openai-python}}.
 
 \subsection{Implementatie}
-\subsubsection{Config}
-Om gebruik te kunnen maken van de API hebben we een API key nodig. Na het genereren van een key op de website kunnen we deze in een .env file stoppen en deze gebruiken binnen onze config. Hieronder vind je de implementatie van de config. 
+\subsubsection{Configuratie}
+Om de API te kunnen gebruiken, hebben we een API-sleutel nodig. Na het genereren van een sleutel op de website, kunnen we deze in een .env-bestand plaatsen en deze gebruiken in onze configuratie. Hieronder vind je de implementatie van de configuratie.
 \begin{pythoncode}{../../../workspace/paper/openAI/util/config.py}
 \end{pythoncode}
 
 \subsubsection{RequestHandler}
-Omdat we voor verschillende use-cases de API zullen gebruiken zal er een requesthandler voorzien worden. Deze requesthandler zal de api key van openAI instellen en de requests uitvoeren gericht naar openAI. Hieronder vind je de code van deze klasse. 
-\begin{pythoncode}{../../../workspace/paper/openAI/util/openairequesthandler.py}
+Omdat we de API zullen gebruiken voor verschillende gebruiksscenario's, hebben we een RequestHandler nodig. Deze RequestHandler stelt de API-sleutel van OpenAI in en voert de verzoeken uit naar OpenAI. Hieronder vind je de code voor deze klasse.
+\begin{pythoncode}{../../../workspace/paper/openairequesthandler1.py}
 \end{pythoncode}
 
 \subsubsection{ChatGPT}
-Als laatste zullen we een klasse voorzien die alle communicatie regelt met GPT, we zullen deze ChatGPT heten. Deze klasse zal een conversatie starten met GPT en hem steeds bevragen om te reageren op de conversatie. Hij zal tenslotte de gescrapete data ontvangen en de prompt retourneren voor Dall-E. \\
-De code wordt hieronder geïllustreerd. 
-\begin{pythoncode}{../../../workspace/paper/openAI/chatgpt/chatgpt.py}
+Tot slot zullen we een klasse maken genaamd ChatGPT, die verantwoordelijk is voor alle communicatie met GPT. Deze klasse start een conversatie met GPT en vraagt hem telkens om te reageren op de conversatie. Uiteindelijk ontvangt hij de gescrapete gegevens en retourneert hij de prompt voor DALL-E. Hieronder wordt de code geïllustreerd.
+\begin{pythoncode}{../../../workspace/paper/openAI/chatgpt.py}
 \end{pythoncode}
+
 \subsection{Uitkomst}
-De uitkomst hiervan is zeer verschillend, met de gescrapete data terug te vinden in de uitkomst van de webscraper krijg je steeds een verschillend uitkomst.  
-Hier is één van de conversaties:
+We kunnen deze code nu testen door de volgende twee regels code toe te voegen aan het \_\_main\_\_.py-bestand.
+\begin{pythoncode}{../../../workspace/paper/gptMain.py}
+\end{pythoncode}
+De uitkomst hiervan is zeer verschillend. Met de gescrapete gegevens die te vinden zijn in de uitkomst van de webscraper, krijg je telkens een andere uitkomst.
+
+Hier is een voorbeeld van een conversatie:
 \begin{drama}
     \Character{Applicatie:}{app}
     \Character{GPT-3.5:}{gpt}
     
-    \appspeaks{ Ik zou graag een kunstwerk willen genereren met dall-e gebaseerd op de hoogtepunten van vandaag. 
+    \appspeaks{ Ik zou graag een kunstwerk willen genereren met DALL-E gebaseerd op de hoogtepunten van vandaag. 
         Ik heb enkele artikels gevonden van vandaag, en deze gegroepeerd per url.
         Ik heb enkel de titel van het artikel opgeslaan. 
         Hoe eerder ze voorkomen hoe belangrijker ze zijn.}
     
-    \gptspeaks{Helaas ben ik als AI taalmodel niet in staat om toegang te krijgen tot het internet om webinhoud te scannen. Wanneer u toegang heeft tot de inhoud van de artikelen, kunt u deze naar mij sturen en kan ik proberen om op basis van deze informatie een kunstwerk te genereren met dall-e.}
+    \gptspeaks{Helaas ben ik als AI taalmodel niet in staat om toegang te krijgen tot het internet om webinhoud te scannen. Wanneer u toegang heeft tot de inhoud van de artikelen, kunt u deze naar mij sturen en kan ik proberen om op basis van deze informatie een kunstwerk te genereren met DALL-E.}
     
     \appspeaks{Welke artikels zijn er het belangrijkst volgens jou, rekeninghoudend met vorige criteria. 
         Hieronder vind je de artikels in json formaat, gegroepeerd per url van belangrijk naar minder belangrijk. <json data gescraped met webscraper>}
@@ -222,38 +232,53 @@ Hier is één van de conversaties:
     
     \gptspeaks{Op basis van de artikels in het JSON-bestand zou de kernboodschap van het gegenereerde kunstwerk als volgt kunnen zijn: "Belangrijke gebeurtenissen van vandaag omvatten een dodelijk ongeval met een petanquebal, de rekrutering van 120.000 soldaten door het Russische leger en de onthulling van Poetins geheime bunker."}
     
-    \appspeaks{Ik zou dit nu graag laten genereren door dall-e om een kunstwerk te krijgen. Wat zou een goede prompt kunnen zijn die een kernboodschap weergeeft van de artikels? Vergeet geen schilder en stijl erbij te zeggen.}
+    \appspeaks{Ik zou dit nu graag laten genereren door DALL-E om een kunstwerk te krijgen. Wat zou een goede prompt kunnen zijn die een kernboodschap weergeeft van de artikels? Vergeet geen schilder en stijl erbij te zeggen.}
     
     \gptspeaks{Een prompt die de kernboodschap van de artikels weergeeft en geschikt zou kunnen zijn voor een kunstwerk gegenereerd door DALL-E zou kunnen luiden: "Een foto/fantasiebeeld van een explosieve petanquebal, gecombineerd met het beeld van een groot paleis aan de Zwarte Zee dat een geheime bunker herbergt, terwijl Russische soldaten rekruteren. 'geschilderd door Salvador Dali'."}
     
     \appspeaks{Reageer enkel met een prompt en zet deze tussen quotes zet er ook bij door welke kunstenaar deze is geschilderd.}
     
-    \gptspeaks{Een surrealistisch tafereel van een reusachtige petanquebal die een geheimzinnig paleis overhoop gooit, terwijl een stoet van Russische soldaten marcheert. Dit alles geschilderd in de kenmerkende, kleurrijke stijl van Salvador Dalí}
+    \gptspeaks{\textbf{Een surrealistisch tafereel van een reusachtige petanquebal die een geheimzinnig paleis overhoop gooit, terwijl een stoet van Russische soldaten marcheert. Dit alles geschilderd in de kenmerkende, kleurrijke stijl van Salvador Dalí}}
     
     \appspeaks{Op basis van welke kernartikels heb je dit gehaald?}
     
     \gptspeaks{Dit kunstwerk is gebaseerd op de drie belangrijkste artikelen zoals eerder vermeld, namelijk het ongeval met de petanquebal op een vrijgezellenfeest in Stavelot, de rekrutering van bijna 120.000 soldaten door het Russische leger en de onthulling van Poetins geheime bunkercomplex onder het paleis aan de Zwarte Zee.} \\ \\
 \end{drama}
     \noindent
-    Op basis van de prompt kunnen we wel degelijk het nieuws herkennen van vandaag. Laten we kijken of dit nu ook een positief resultaat geeft binnen Dall-E.
+    Op basis van de prompt kunnen we wel degelijk het nieuws herkennen van vandaag. Laten we kijken of dit nu ook een positief resultaat geeft binnen DALL-E.
 
 
 \section{DALL-E}
+
 \subsection{Inleiding}
-Kort nog eens de moeilijkheden uitleggen (interpretatie etc.)
+Net als bij GPT maken we gebruik van de OpenAI Python-bibliotheek om DALL·E te benaderen. Met DALL·E kunnen we kunstwerken creëren die overeenkomen met de prompts gegenereerd door GPT.
+
 \subsection{Implementatie}
-Kort uitleggen
+Om kunstwerken te genereren met behulp van DALL-E, moeten we eerst de RequestHandler uitbreiden met een nieuwe methode om verzoeken te versturen via de openai library. Vervolgens definiëren we een klasse voor DALL-E, zodat we deze kunnen gebruiken in het 
+\_\_main\_\_.py bestand. \\
+
+We beginnen met het uitbreiden van de RequestHandler.
+
+\subsubsection{Uibreiding van RequestHandler}
+Om het verzoek te versturen, definiëren we een nieuwe methode generate\_image(self, prompt) die de prompt naar de API verzendt. We ontvangen de URL terug waar het kunstwerk te vinden is. Het eindresultaat ziet er als volgt uit:
+\begin{pythoncode}{../../../workspace/paper/openAI/util/openairequesthandler.py}
+\end{pythoncode}
+
+\subsubsection{DALL-E}
+Nu we het verzoek kunnen versturen, maken we een klasse DALL-E aan die deze methode zal uitvoeren binnen het  \_\_main\_\_.py-bestand. Hieronder vind je de implementatie:
+\begin{pythoncode}{../../../workspace/paper/openAI/dalle.py}
+\end{pythoncode}
+    
 \subsection{Resultaat}
-.
-\begin{listing}[H]
-\begin{minted}[breaklines, style=solarized-dark]{python}
-   # This is a random comment
-   class Yo:
-        def fn:
-            return 1337
-   
-  print(``yo'')
-  
-\end{minted}
-\caption{Test code format}
-\end{listing}
+Ten slotte breiden we het \_\_main\_\_.py-bestand uit met deze code, resulterend in de volgende code:
+\begin{pythoncode}{../../../workspace/paper/__main__.py}
+\end{pythoncode}
+Om het resultaat te testen, gebruiken we de prompt: \emph{"Een surrealistisch tafereel van een reusachtige petanquebal die een geheimzinnig paleis overhoop gooit, terwijl een stoet van Russische soldaten marcheert. Dit alles geschilderd in de kenmerkende, kleurrijke stijl van Salvador Dalí"}, verkregen uit de voorgaande implementatie, om met DALL-E een kunstwerk te genereren. \\
+
+DALL·E genereert een URL waar we het kunstwerk kunnen bekijken. De onderstaande afbeelding toont het gegenereerde kunstwerk.
+
+\begin{center}
+    \includegraphics[width = 4in]{dall-e_result.png}
+    \captionof{figure}{Kunstwerk gegenereerd met DALL-E en GPT met behulp van de gescrapete data in figuur 4.5}
+    \label{fig:dall-e_result}
+\end{center}

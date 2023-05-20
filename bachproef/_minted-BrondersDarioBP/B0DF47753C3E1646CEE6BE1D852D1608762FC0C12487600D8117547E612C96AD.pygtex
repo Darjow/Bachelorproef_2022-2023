@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{openAI.chatgpt} \PYG{k+kn}{import} \PYG{n}{ChatGPT}
+\PYG{k+kn}{from} \PYG{n+nn}{openAI.dalle} \PYG{k+kn}{import} \PYG{n}{DallE}
+\PYG{k+kn}{from} \PYG{n+nn}{scraper.Scraper} \PYG{k+kn}{import} \PYG{n}{Scraper}
+
+
+
+\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{():}
+  \PYG{n}{scraped\PYGZus{}data} \PYG{o}{=} \PYG{n}{Scraper}\PYG{p}{()}\PYG{o}{.}\PYG{n}{start\PYGZus{}scraping}\PYG{p}{()}
+  \PYG{n}{prompt} \PYG{o}{=} \PYG{n}{ChatGPT}\PYG{p}{()}\PYG{o}{.}\PYG{n}{start\PYGZus{}new\PYGZus{}conversation}\PYG{p}{(}\PYG{n}{scraped\PYGZus{}data}\PYG{p}{)}
+  \PYG{n}{image} \PYG{o}{=} \PYG{n}{DallE}\PYG{p}{()}\PYG{o}{.}\PYG{n}{generate\PYGZus{}image}\PYG{p}{(}\PYG{n}{prompt}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{image}\PYG{p}{)}
+  
+
+  
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+  \PYG{n}{main}\PYG{p}{()}
+\end{Verbatim}

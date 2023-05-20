@@ -1,0 +1,25 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{scraper.util.volatileDictionary} \PYG{k+kn}{import} \PYG{n}{VolatileDict}
+\PYG{k+kn}{from} \PYG{n+nn}{scraper.threads.abstractThread} \PYG{k+kn}{import} \PYG{n}{AbstractThread}
+\PYG{k+kn}{from} \PYG{n+nn}{scraper.threads.hlnThread} \PYG{k+kn}{import} \PYG{n}{HLNThread}
+\PYG{k+kn}{from} \PYG{n+nn}{scraper.threads.deMorgenThread} \PYG{k+kn}{import} \PYG{n}{DeMorgenThread}
+\PYG{k+kn}{from} \PYG{n+nn}{concurrent.futures} \PYG{k+kn}{import} \PYG{n}{ThreadPoolExecutor}
+
+
+\PYG{k}{class} \PYG{n+nc}{Scraper}\PYG{p}{:}
+  \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{threads}\PYG{p}{:} \PYG{n}{List}\PYG{p}{[}\PYG{n}{AbstractThread}\PYG{p}{]} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dict} \PYG{o}{=} \PYG{n}{VolatileDict}\PYG{p}{()}
+    
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{threads}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{HLNThread}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dict}\PYG{p}{))}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{threads}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{DeMorgenThread}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dict}\PYG{p}{))}
+
+  \PYG{k}{def} \PYG{n+nf}{start\PYGZus{}scraping}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}    
+    \PYG{k}{with} \PYG{n}{ThreadPoolExecutor}\PYG{p}{()} \PYG{k}{as} \PYG{n}{pool}\PYG{p}{:}
+      \PYG{n}{futures} \PYG{o}{=} \PYG{p}{[}\PYG{n}{pool}\PYG{o}{.}\PYG{n}{submit}\PYG{p}{(}\PYG{n}{thread}\PYG{o}{.}\PYG{n}{start\PYGZus{}scraping}\PYG{p}{)} \PYG{k}{for} \PYG{n}{thread} \PYG{o+ow}{in} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{threads}\PYG{p}{]}
+
+    \PYG{k}{for} \PYG{n}{future} \PYG{o+ow}{in} \PYG{n}{futures}\PYG{p}{:}
+      \PYG{n}{future}\PYG{o}{.}\PYG{n}{result}\PYG{p}{()}
+
+    \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dict}\PYG{o}{.}\PYG{n}{output\PYGZus{}dict}\PYG{p}{()}
+\end{Verbatim}
