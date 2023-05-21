@@ -26,7 +26,7 @@ Als we vervolgens gaan kijken naar de DOM van een artikel, zien we dat de titel 
 
 \begin{center}
     \includegraphics[width = 6in]{hln_article1.png}
-    \captionof{figure}{DOM van een artikel op HLN met de essentiële elementen gemarkeerd.}
+    \captionof{figure}{DOM van een artikel op HLN.}
     \label{fig:hln_article}
 \end{center}
 
@@ -213,8 +213,7 @@ Hier is een voorbeeld van een conversatie:
     
     \appspeaks{ Ik zou graag een kunstwerk willen genereren met DALL-E gebaseerd op de hoogtepunten van vandaag. 
         Ik heb enkele artikels gevonden van vandaag, en deze gegroepeerd per url.
-        Ik heb enkel de titel van het artikel opgeslaan. 
-        Hoe eerder ze voorkomen hoe belangrijker ze zijn.}
+        Ik heb enkel de titel van het artikel opgeslaan.}
     
     \gptspeaks{Helaas ben ik als AI taalmodel niet in staat om toegang te krijgen tot het internet om webinhoud te scannen. Wanneer u toegang heeft tot de inhoud van de artikelen, kunt u deze naar mij sturen en kan ik proberen om op basis van deze informatie een kunstwerk te genereren met DALL-E.}
     
@@ -222,28 +221,37 @@ Hier is een voorbeeld van een conversatie:
         Hieronder vind je de artikels in json formaat, gegroepeerd per url van belangrijk naar minder belangrijk. <json data gescraped met webscraper>}
     
     
-    \gptspeaks{Als AI taalmodel kan ik geen subjectieve waarden toekennen aan de artikels. Echter, op basis van de frequentie van de urls kunnen we afleiden dat de artikels van https://www.hln.be belangrijker zijn dan die van https://www.demorgen.be. Binnen de artikelen van https://www.hln.be zijn de artikels over het ongeval met de ontplofte petanquebal, de rekruten van het Russische leger, en de onthulling van Poetins geheime bunkercomplex onder het gigantisch paleis aan de Zwarte Zee de belangrijkste.}
+    \gptspeaks{Op basis van de beschikbare titels van de artikelen, zou ik de volgende groepering van hoogtepunt-artikelen aanbevelen:  \begin{itemize}
+            \item{‘Ook aan hun kant ontploft er heel wat’: Oekraïne lijkt te dralen met zijn tegenoffensief.}
+            \item{Poetins geheime bunkercomplex onder gigantisch paleis aan Zwarte Zee onthuld: zo ziet het eruit.}
+            \item{"‘VS zetten licht op groen voor training Oekraïense piloten in westerse gevechtsvliegtuigen.’"}
+    \end{itemize}
+Merk op dat deze groepering enkel gebaseerd is op de titels van de artikelen en dat deze niet noodzakelijk overeenkomen met de werkelijke gebeurtenissen of de inhoud van de artikelen. Ik raad je aan om de artikelen en hun inhoud te lezen om beter te begrijpen waarover ze gaan en om zelf een weloverwogen beslissing te nemen over welke gebeurtenissen je relevant vindt om in een kunstwerk te verwerken.}
+
     
     \appspeaks{Als je voor mij hier één kernzin kan uithalen; een samenvatting. Welke zou het dan zijn?}
     
-    \gptspeaks{Op basis van de artikels van https://www.hln.be, kan als kernzin samengevat worden dat er een Nederlander is overleden na een ongeval met een ontplofte petanquebal tijdens een vrijgezellenfeest in Stavelot en dat Rusland bijna 120.000 soldaten heeft gerekruteerd dit jaar, terwijl ook de onthulling van Poetins geheime bunker onder het gigantisch paleis aan de Zwarte Zee heeft plaatsgevonden.}
+    \gptspeaks{De kernboodschap van de artikelen is dat er zich tragische gebeurtenissen hebben voorgedaan, zoals dodelijke ongevallen, schietpartijen en conflicten tussen landen. Deze gebeurtenissen worden gekenmerkt door verlies, geweld en spanning. Een schilderij dat deze boodschap weerspiegelt, zou de emotionele impact en de donkere aspecten van deze gebeurtenissen kunnen benadrukken..}
     
-    \appspeaks{Maak voor mij een kernboodschap op basis van voorgaand JSON. Houd de boodschap beperkt zodat het zeker duidelijk is in het kunstwerk.}
+    \appspeaks{user: Maak voor mij een kernboodschap op basis van voorgaand JSON. Houd de boodschap beperkt tot één artikel.}
     
-    \gptspeaks{Op basis van de artikels in het JSON-bestand zou de kernboodschap van het gegenereerde kunstwerk als volgt kunnen zijn: "Belangrijke gebeurtenissen van vandaag omvatten een dodelijk ongeval met een petanquebal, de rekrutering van 120.000 soldaten door het Russische leger en de onthulling van Poetins geheime bunker."}
+    \gptspeaks{Op basis van de beschikbare artikelen in de gegeven JSON, zou ik de volgende kernboodschap aanbevelen: "Tragische gebeurtenissen markeren het verlies van mensenlevens en de schokkende realiteit van geweld'}
     
-    \appspeaks{Ik zou dit nu graag laten genereren door DALL-E om een kunstwerk te krijgen. Wat zou een goede prompt kunnen zijn die een kernboodschap weergeeft van de artikels? Vergeet geen schilder en stijl erbij te zeggen.}
+    \appspeaks{Ik zou dit nu graag laten genereren door dall-e om een kunstwerk te krijgen.
+        Wat zou een goede prompt kunnen zijn die een kernboodschap weergeeft van de belangrijkste artikel, de boodschap moet goed overkomen.
+        Vergeet geen stijl erbij te zeggen.}
     
-    \gptspeaks{Een prompt die de kernboodschap van de artikels weergeeft en geschikt zou kunnen zijn voor een kunstwerk gegenereerd door DALL-E zou kunnen luiden: "Een foto/fantasiebeeld van een explosieve petanquebal, gecombineerd met het beeld van een groot paleis aan de Zwarte Zee dat een geheime bunker herbergt, terwijl Russische soldaten rekruteren. 'geschilderd door Salvador Dali'."}
+    \gptspeaks{Een prompt die de kernboodschap van de artikels weergeeft en geschikt zou kunnen zijn voor een kunstwerk gegenereerd door DALL-E zou kunnen luiden: "Een indringend kunstwerk dat de tragiek van verlies en het conflict tussen Rusland en Oekraïne verbeeldt, in expressief realisme."}
     
-    \appspeaks{Reageer enkel met een prompt en zet deze tussen quotes zet er ook bij door welke kunstenaar deze is geschilderd.}
+    \appspeaks{Reageer enkel met een prompt die deze kernboodschap weergeeft en zet deze tussen quotes zet er ook bij door welke kunstenaar deze is geschilderd of in welke stijl. Gebruik maximum 75 karakters.}
     
-    \gptspeaks{\textbf{Een surrealistisch tafereel van een reusachtige petanquebal die een geheimzinnig paleis overhoop gooit, terwijl een stoet van Russische soldaten marcheert. Dit alles geschilderd in de kenmerkende, kleurrijke stijl van Salvador Dalí}}
+    \gptspeaks{\textbf{''Expressief realistisch schilderij: verlies, conflict Rusland-Oekraïne."}}
     
     \appspeaks{Op basis van welke kernartikels heb je dit gehaald?}
     
-    \gptspeaks{Dit kunstwerk is gebaseerd op de drie belangrijkste artikelen zoals eerder vermeld, namelijk het ongeval met de petanquebal op een vrijgezellenfeest in Stavelot, de rekrutering van bijna 120.000 soldaten door het Russische leger en de onthulling van Poetins geheime bunkercomplex onder het paleis aan de Zwarte Zee.} \\ \\
+    \gptspeaks{Dit kunstwerk is gebaseerd op de drie belangrijkste artikelen zoals eerder vermeld, namelijk het tegenoffensief van Oekraïne, Poetins geheime bunkercomplex aan de Zwarte Zee en VS die de training van Oekraïense piloten start. }
 \end{drama}
+
     \noindent
     Op basis van de prompt kunnen we wel degelijk het nieuws herkennen van vandaag. Laten we kijken of dit nu ook een positief resultaat geeft binnen DALL-E.
 
@@ -273,9 +281,9 @@ Nu we het verzoek kunnen versturen, maken we een klasse DALL-E aan die deze meth
 Ten slotte breiden we het \_\_main\_\_.py-bestand uit met deze code, resulterend in de volgende code:
 \begin{pythoncode}{../../../workspace/paper/__main__.py}
 \end{pythoncode}
-Om het resultaat te testen, gebruiken we de prompt: \emph{"Een surrealistisch tafereel van een reusachtige petanquebal die een geheimzinnig paleis overhoop gooit, terwijl een stoet van Russische soldaten marcheert. Dit alles geschilderd in de kenmerkende, kleurrijke stijl van Salvador Dalí"}, verkregen uit de voorgaande implementatie, om met DALL-E een kunstwerk te genereren. \\
+Om het resultaat te testen, gebruiken we de prompt: \emph{"Expressief realistisch schilderij: verlies, conflict Rusland-Oekraïne."}, verkregen uit de voorgaande implementatie, om met DALL-E een kunstwerk te genereren. \\
 
-DALL·E genereert een URL waar we het kunstwerk kunnen bekijken. De onderstaande afbeelding toont het gegenereerde kunstwerk.
+DALL-E genereert een URL waar we het kunstwerk kunnen bekijken. De onderstaande afbeelding toont het gegenereerde kunstwerk.
 
 \begin{center}
     \includegraphics[width = 4in]{dall-e_result.png}
