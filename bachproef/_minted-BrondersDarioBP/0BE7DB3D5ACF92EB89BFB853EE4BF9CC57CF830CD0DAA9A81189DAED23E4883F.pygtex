@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{():}
+  \PYG{n}{date} \PYG{o}{=} \PYG{n}{datetime}\PYG{p}{(}\PYG{l+m+mi}{2001}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{,} \PYG{l+m+mi}{11}\PYG{p}{)}
+  \PYG{n}{scraped\PYGZus{}data} \PYG{o}{=} \PYG{n}{StandaardScraper}\PYG{p}{(}\PYG{n}{date}\PYG{p}{)}\PYG{o}{.}\PYG{n}{start\PYGZus{}scraping}\PYG{p}{()}
+  \PYG{n}{prompt} \PYG{o}{=} \PYG{n}{ChatGPT}\PYG{p}{()}\PYG{o}{.}\PYG{n}{start\PYGZus{}new\PYGZus{}conversation}\PYG{p}{(}\PYG{n}{scraped\PYGZus{}data}\PYG{p}{,} \PYG{n}{date}\PYG{p}{)}
+  \PYG{n}{image} \PYG{o}{=} \PYG{n}{DallE}\PYG{p}{()}\PYG{o}{.}\PYG{n}{generate\PYGZus{}image}\PYG{p}{(}\PYG{n}{prompt}\PYG{p}{)}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{image}\PYG{p}{)}
+  
+\end{Verbatim}

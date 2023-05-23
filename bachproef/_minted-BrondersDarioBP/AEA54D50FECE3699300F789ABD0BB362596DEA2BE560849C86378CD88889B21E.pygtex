@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{start\PYGZus{}new\PYGZus{}conversation}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{data}\PYG{p}{,} \PYG{n}{date}\PYG{p}{):}
+  \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{conversation} \PYG{o}{=} \PYG{p}{[]}
+  
+  \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{ask}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+s2}{            Ik zou graag een kunstwerk willen genereren met dall\PYGZhy{}e gebaseerd op de hoogtepunten van }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{date}\PYG{o}{.}\PYG{n}{day}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{date}\PYG{o}{.}\PYG{n}{month}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{date}\PYG{o}{.}\PYG{n}{year}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{. }
+\PYG{l+s+s2}{            Ik heb enkel de titel van de artikels opgeslaan. Uiteraard is jou kennis over deze dag niet minder belangrijk.}
+\PYG{l+s+s2}{            \PYGZdq{}\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+  
+  \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{ask}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+s2}{            Hieronder vind je de artikels.}
+\PYG{l+s+s2}{            }
+\PYG{l+s+s2}{            }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{data}\PYG{l+s+si}{\PYGZcb{}}
+\PYG{l+s+s2}{            \PYGZdq{}\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+  
+  \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{ask}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Als je voor mij hier één kernzin kan uithalen van deze dag; een samenvatting. Welke zou het dan zijn?\PYGZdq{}}\PYG{p}{)}
+      
+  \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{ask}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+s2}{            Ik zou dit nu graag laten genereren door dall\PYGZhy{}e om een kunstwerk te krijgen. }
+\PYG{l+s+s2}{            Wat zou een goede prompt kunnen zijn die een kernboodschap weergeeft van de belangrijkste artikel, de boodschap moet goed overkomen.}
+\PYG{l+s+s2}{            Vergeet geen stijl erbij te zeggen.}
+\PYG{l+s+s2}{            \PYGZdq{}\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+  
+  \PYG{n}{data} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{ask}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Reageer enkel met een prompt die deze kernboodschap weergeeft en zet deze tussen quotes zet er ook bij door welke kunstenaar deze is geschilderd of in welke stijl. Gebruik maximum 75 karakters.\PYGZdq{}}\PYG{p}{)}
+
+  
+  \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{ask}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Op basis van welke kernartikels heb je dit gehaald?\PYGZdq{}}\PYG{p}{)}
+  
+  \PYG{k}{return} \PYG{n}{data}        
+  
+\end{Verbatim}

@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{StandaardScraper}\PYG{p}{(}\PYG{n}{threading}\PYG{o}{.}\PYG{n}{Thread}\PYG{p}{):}
+  \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{date}\PYG{p}{:} \PYG{n}{datetime}\PYG{p}{):}
+    
+    \PYG{n}{locale}\PYG{o}{.}\PYG{n}{setlocale}\PYG{p}{(}\PYG{n}{locale}\PYG{o}{.}\PYG{n}{LC\PYGZus{}TIME}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}nl\PYGZus{}NL.utf8\PYGZsq{}}\PYG{p}{)}
+      
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dict} \PYG{o}{=} \PYG{p}{[]}
+        
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{url}  \PYG{o}{=} \PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}https://www.standaard.be/archief/cnt/}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{date}\PYG{o}{.}\PYG{n}{year}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{/}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{date}\PYG{o}{.}\PYG{n}{month}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{/}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{date}\PYG{o}{.}\PYG{n}{day}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{date} \PYG{o}{=} \PYG{n}{date}
+        
+    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{headers} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+      \PYG{l+s+s2}{\PYGZdq{}User\PYGZhy{}Agent\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3\PYGZdq{}}\PYG{p}{,}
+      \PYG{l+s+s2}{\PYGZdq{}Accept\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}text/html, application/xhtml+xml, application/xml; q=0.9,image/avif, image/webp,image/apng, */*;q=0.8\PYGZdq{}}\PYG{p}{,}
+      \PYG{l+s+s2}{\PYGZdq{}Accept\PYGZhy{}Encoding\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}gzip, deflate, br\PYGZdq{}}\PYG{p}{,}
+      \PYG{l+s+s2}{\PYGZdq{}Accept\PYGZhy{}Language\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}nl\PYGZhy{}NL,nl;q=0.8\PYGZdq{}}\PYG{p}{,}
+      \PYG{l+s+s2}{\PYGZdq{}Cache\PYGZhy{}Control\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}max\PYGZhy{}age=0\PYGZdq{}}\PYG{p}{,}
+      \PYG{l+s+s2}{\PYGZdq{}Cookie\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}authId=84f9c58f\PYGZhy{}0da1\PYGZhy{}4752\PYGZhy{}a294\PYGZhy{}74df52a18ec8;\PYGZdq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}
+    
+    \PYG{n+nb}{super}\PYG{p}{()}\PYG{o}{.}\PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{()}
+    
+  \PYG{k}{def} \PYG{n+nf}{start\PYGZus{}scraping}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+    \PYG{n}{bs} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{on\PYGZus{}start}\PYG{p}{()}
+    
+    \PYG{n}{articles} \PYG{o}{=} \PYG{n}{bs}\PYG{o}{.}\PYG{n}{find\PYGZus{}all}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}section\PYGZdq{}}\PYG{p}{,} \PYG{n}{attrs}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}class\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}l\PYGZhy{}zone\PYGZdq{}}\PYG{p}{\PYGZcb{})}
+    \PYG{k}{for} \PYG{n}{article} \PYG{o+ow}{in} \PYG{n}{articles}\PYG{p}{:}
+      \PYG{k}{for} \PYG{n}{ul} \PYG{o+ow}{in} \PYG{n}{article}\PYG{o}{.}\PYG{n}{find\PYGZus{}all}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ul\PYGZdq{}}\PYG{p}{):}
+        \PYG{k}{for} \PYG{n}{li} \PYG{o+ow}{in} \PYG{n}{ul}\PYG{o}{.}\PYG{n}{find\PYGZus{}all}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}li\PYGZdq{}}\PYG{p}{):}
+          \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dict}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{100}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{}Geen maximum content. }
+            \PYG{k}{break}
+          
+          \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dict}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{li}\PYG{o}{.}\PYG{n}{get\PYGZus{}text}\PYG{p}{(}\PYG{n}{strip}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{))}
+          
+    \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dict}
+        
+  \PYG{k}{def} \PYG{n+nf}{on\PYGZus{}start}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+    \PYG{n}{session} \PYG{o}{=} \PYG{n}{HTMLSession}\PYG{p}{()}
+    \PYG{n}{response} \PYG{o}{=} \PYG{n}{session}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{url}\PYG{p}{)}
+    \PYG{n}{response}\PYG{o}{.}\PYG{n}{html}\PYG{o}{.}\PYG{n}{render}\PYG{p}{()}
+    \PYG{k}{return} \PYG{n}{BeautifulSoup}\PYG{p}{(}\PYG{n}{response}\PYG{o}{.}\PYG{n}{html}\PYG{o}{.}\PYG{n}{html}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}html.parser\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}
