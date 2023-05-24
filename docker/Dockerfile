@@ -16,8 +16,6 @@ RUN apt update && apt-get install -y \
     && pip install pygments \
     && apt-get install -y texlive-generic-extra
 
-RUN apt-get install -y texlive-science texlive-publishers texlive-humanities texlive-latex-recommended texlive-fonts-extra
-
 RUN tlmgr update --self && tlmgr install dramatist
 
 COPY fonts/ /usr/share/fonts/opentype
