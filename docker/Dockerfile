@@ -14,6 +14,11 @@ RUN apt update && apt-get install -y \
     python3-pip \
     latexmk \
     && pip install pygments \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y texlive-generic-extra
+
+RUN apt-get install -y texlive-science texlive-publishers texlive-humanities texlive-latex-recommended texlive-fonts-extra
+
+RUN tlmgr update --self && tlmgr install dramatist
+
 COPY fonts/ /usr/share/fonts/opentype
 RUN fc-cache -f -v
