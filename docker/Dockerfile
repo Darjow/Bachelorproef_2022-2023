@@ -1,3 +1,5 @@
+FROM debian:bullseye
+
 RUN apt update && apt-get install -y \
     texlive-latex-base \
     texlive-latex-extra \
@@ -9,9 +11,9 @@ RUN apt update && apt-get install -y \
     jabref \
     r-base \
     texlive-xetex \
-    texlive-fonts-recommended \
-    fonts-bera \    
     python3-pip \
     latexmk \
     && pip install pygments \
     && rm -rf /var/lib/apt/lists/*
+COPY fonts/ /usr/share/fonts/opentype
+RUN fc-cache -f -v
