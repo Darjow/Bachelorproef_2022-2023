@@ -14,7 +14,7 @@ RUN apt update && apt-get install -y \
     python3-pip \
     latexmk \
     && pip install pygments \
-    && apt-get install -y texlive-generic-extra
+    && rm -rf /var/lib/apt/lists/*
 
 RUN tlmgr update --self && tlmgr install dramatist
 
