@@ -1,7 +1,7 @@
 \chapter{\IfLanguageName{dutch}{Evaluatieproces}{Evaluationproces}}%
 \label{ch:evaluatieproces}
 \section{Inleiding}
-Het interpreteren van gevoelens en boodschappen uit kunstwerken is een zeer persoonlijk iets. Het beoordelen van de effectiviteit van de applicatie is dus een uitdagende taak zijn. Om een grondige evaluatie van onze kunstwerken mogelijk te maken, is er besloten om een Turingtest te implementeren als onderdeel van ons evaluatieproces. Hierbij werken we met een diverse set persona's. \\
+Het interpreteren van gevoelens en boodschappen uit kunstwerken is een zeer persoonlijk iets. Het beoordelen van de effectiviteit van de applicatie is dus een uitdagende taak. Om een grondige evaluatie van onze kunstwerken mogelijk te maken, is er besloten om een Turingtest te implementeren als onderdeel van ons evaluatieproces. Hierbij werken we met een diverse set persona's. \\
 
 Het doel van ons evaluatieproces is om de interpretatie en relevantie van de kunstwerken te valideren. Het resultaat van de turingtest kun je vinden in punt \ref{section:result}.
 
@@ -9,14 +9,12 @@ Het doel van ons evaluatieproces is om de interpretatie en relevantie van de kun
 \label{sec:turingtest}
  Door deelnemers te vragen specifiek nieuws te identificeren dat zij associëren met elk schilderij, kunnen we hun begrip van de context en hun vermogen om de artistieke interpretatie te verbinden met actuele gebeurtenissen beoordelen. We zullen de deelnemers vragen om specifieke nieuwsgebeurtenissen te identificeren die zij associëren met elk schilderij.  Indien een deelnemer een onjuiste associatie maakt, zullen we het betreffende nieuwsartikel tonen en vervolgens vragen of ze het nieuwsgebeuren herkennen.. Indien een deelnemer geen nieuws volgt, kunnen we hem altijd vragen te gokken naar wat er zou kunnen ge-associeerd zijn met deze kunstwerk om te weten welk gevoel of boodschap dit overbrengt. \\
  
- In deze test zullen we deelnemers vragen om drie verschillende schilderijen te bekijken, elk verkregen door de de applicatie van de laatste drie dagen. De taak van de deelnemers is om aan te geven welk nieuwsgebeuren zij herkennen in elk van de schilderijen. Het resultaat van deze 3 samples laat ons toe om te kunnen oordelen of de applicatie goed zou kunnen werken binnen bijvoorbeeld een krant of nieuwswebsite.  \\
+ In deze test zullen we deelnemers vragen om 3 verschillende schilderijen te bekijken, elk verkregen door de de applicatie van de laatste drie dagen. De taak van de deelnemers is om aan te geven welk nieuwsgebeuren zij herkennen in elk van de schilderijen. Het resultaat van deze 3 samples laat ons toe om te kunnen oordelen of de applicatie goed zou kunnen werken binnen bijvoorbeeld een krant of nieuwswebsite.  \\
  
  Verder voegen we ook 2 samples toe die zeer belangrijke data zijn uit het verleden, we zullen hiervoor de scraper moeten aanpassen zodat deze op een specifieke dag kan scrapen. Het resultaat van deze 2 samples laat ons toe om te kunnen oordelen of AI wel degelijk in staat is om schilderijen te genereren waarvan de boodschap de kernboodschap is van de dag. De wijzigingen aan de code vind je in bijlage \ref{bijlage:changes_scraper}
  
 
-  
 \section{Persona}
-
 Zoals eerder vermeld hebben we tijdens de turingtest een diverse groep deelnemers betrokken. We hebben verschillende criteria gehanteerd, zoals leeftijd, geslacht, artistieke achtergrond, huidige baan of studie, en of de persona het nieuws volgt of niet. \\
 
 Naast deze diversiteit in persoonlijke kenmerken hebben is er ook voor gekozen om persona's uit verschillende landen te betrekken, namelijk Nederland en Litouwen. We hebben hiervoor gekozen omdat perspectieven en percepties vaak verbonden zijn aan cultuur en achtergrond. Door de betrokkenheid van verschillende nationaliteiten kunnen we de invloed van deze diverse perspectieven op de interpretatie van kunstwerken onderzoeken.
@@ -107,7 +105,7 @@ Bij de eerste 3 samples waarbij we op de huidige dag het nieuws hebben gescrapet
 
 Daarnaast hebben we 2 samples gebruikt waarbij we gegevens hebben gescrapet van een specifieke dag in het verleden. Hierbij viel op dat de meeste personen de boodschap van deze kunstwerken konden afleiden. Dit duidt erop dat AI erin is geslaagd om de gewenste emotie of betekenis over te brengen op basis van belangrijke data uit het verleden.  \\
 
-Hoewel er variatie was in de interpretaties van de kunstwerken, kunnen we concluderen dat de turingtest over het algemeen geslaagd is. Het vermogen van de kunstwerken om emoties op te roepen, betekenissen over te brengen en reacties uit te lokken, toont aan dat ze een waardevolle artistieke waarde hebben. Bovendien benadrukt het resultaat van de turingtest de veelzijdigheid en subjectiviteit van kunst. \\
+Hoewel de interpretaties van de kunstwerken varieerden, kunnen we over het algemeen concluderen dat de turingtest succesvol was in het oproepen van de juiste emoties en het overbrengen van relatief duidelijke boodschap wat wijst op hun waardevolle artistieke waarde. Het resultaat van de turingtest benadrukt echter ook de uitdaging van het herkennen van abstractie en de subjectiviteit die inherent is aan kunst. \\
 
 De gedetailleerde resultaten van de turingtest zijn beschikbaar in bijlage punt \ref{bijlage:result_turingtest}. Daar kun je meer informatie vinden over de individuele interpretaties en feedback van de deelnemers.
 
@@ -117,6 +115,6 @@ Het resultaat verkregen van GPT en DALL-E is gebaseerd op patronen en informatie
 
 Ten eerste kan GPT soms de context of intentie van de invoer verkeerd begrijpen of verkeerd interpreteren. Dit kan leiden tot onjuiste of ongepaste antwoorden. Het model kan gevoelig zijn voor subtiele veranderingen in de formulering van de vraag en kan daardoor onverwachte resultaten produceren. \\
 
-Ten tweede kan DALL-E, als een generatief model voor beeldcreatie, soms afbeeldingen genereren die niet volledig relevant zijn voor het huidige nieuws of specifieke vereisten. Hoewel het model in staat is om nieuwe, unieke afbeeldingen te maken op basis van de gegeven prompt, is het niet altijd in staat om contextuele nuances of specifieke details van de gewenste afbeelding te begrijpen. \\
+Ten tweede kan DALL-E, soms afbeeldingen genereren die niet volledig relevant zijn voor het huidige nieuws of specifieke vereisten. Hoewel het model in staat is om nieuwe, unieke afbeeldingen te maken op basis van de gegeven prompt, is het niet altijd in staat om contextuele nuances of specifieke details van de gewenste afbeelding te begrijpen. \\
 
 We kunnen besluiten uit de werking van de applicatie dat doordat er nooit eenzelfde uitkomst is en deze uitkomst kan variëren in relevantie tot het nieuws, dat er steeds menselijke controle moet zijn op de foto vooraleer deze kan gebruikt worden binnen bijvoorbeeld een krant die dagelijks een kunstwerk genereert op basis van de artikels die hierin voorkomen. 

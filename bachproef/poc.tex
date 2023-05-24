@@ -1,28 +1,28 @@
 \chapter{\IfLanguageName{dutch}{proof-of-concept}{proof-of-concept}}%
 \label{ch:proof-of-concept}
 \section{Inleiding}
-In dit hoofdstuk bespreken we de implementatie van het proof-of-concept. We bespreken elke fase van het proces in detail en de implementatie van de bijbehorende componenten toelichten. Hierbij zullen we ook de uitkomsten van elke fase beschrijven en hoe deze kunnen gebruikt worden in de volgende fase. \\
+In dit hoofdstuk bespreken we de implementatie van het proof-of-concept. We bespreken elke fase van het proces in detail en de implementatie van de bijbehorende componenten toelichten. Hierbij zullen we ook de uitkomsten van elke fase beschrijven en hoe deze kunnen gebruikt worden in de volgende fase. 
 
 \section{Webscraper}
 \subsection{Algemene Eisen}
-Binnen de algemene eisen zal de webscraper voldoen aan de ethische aspecten \ref{subsection:scraper-ethische-aspecten} die zijn beschreven in de state of the art van dit onderzoek. Dit betekent dat de scraper de regels en richtlijnen van de gescrapte websites zal respecteren en zich zal houden aan eventuele beperkingen zoals vermeld in het robots.txt-bestand. Hierdoor wordt ervoor gezorgd dat de scrapingactiviteiten op een ethisch verantwoorde manier worden uitgevoerd. \\
+Binnen de algemene eisen zal de webscraper voldoen aan de ethische aspecten \ref{subsection:scraper-ethische-aspecten} die eerder werden beschreven. Dit betekent dat de scraper de regels en richtlijnen van de gescrapte websites zal respecteren en zich zal houden aan eventuele beperkingen zoals vermeld in het robots.txt-bestand. Hierdoor wordt ervoor gezorgd dat de scrapingactiviteiten op een ethisch verantwoorde manier worden uitgevoerd. \\
 
 Daarnaast zal de webscraper in staat zijn om verschillende websites te scrapen, met de focus op het verzamelen van de frontpage-inhoud. Specifiek zal de scraper de eerste 20 items van de frontpage van elke website verzamelen. \\
 
 De webscraper zal twee bekende nieuwsbronnen scrapen, namelijk HLN en DeMorgen.
 
 \subsection{Verkenning}
-Alvorens we de webscraper kunnen implementeren, is het nodig om de DOM van beide websites te bekijken en een patroon hierin te herkennen. \\
+Alvorens we de webscraper kunnen implementeren, is het nodig om de DOM-structuur \footnote{De DOM-structuur (Document Object Model) is een hiërarchische representatie van een HTML- of XML-document.} van beide websites te bekijken en een patroon hierin te herkennen. 
 \subsubsection{HLN}
 Op de startpagina van HLN kunnen we zien (figuur \ref{fig:hln_frontpage}) dat elk nieuwsartikel zich bevindt binnen een article-tag bevindt. De eerste subtag is een a-tag met hierin de href naar het artikel. \\ Deze href zal belangrijk zijn om de datum te valideren en de titel te extraheren. We moeten deze dus opslaan. 
 
 \begin{center}
     \includegraphics[width = 6in]{hln_frontpage2.png}
-    \captionof{figure}{DOM van de startpagina van HLN met aangeduide nieuwsartikels.}
+    \captionof{figure}{DOM-structuur van de startpagina van HLN met hierop verschillende nieuwsartikels op aangeduid.}
     \label{fig:hln_frontpage}
 \end{center}
 
-Als we vervolgens gaan kijken naar de DOM van een artikel, zien we dat de titel weergegeven wordt binnen een header-tag met als class 'article\_\_header' deze titel heeft als class 'article\_\_title'. De datum wordt weergegeven binnen een time-tag met datetime als value en class 'article\_\_time'. De datum is ook opgemaakt in een bepaald formaat, dd-mm-yy, hh:mm. Deze gegevens zijn essentieel voor de scraper. In figuur \ref{fig:hln_article} vind je dit terug. \\
+Als we vervolgens gaan kijken naar de DOM-structuur van een artikel, zien we dat de titel weergegeven wordt binnen een header-tag met als class 'article\_\_header' deze titel heeft als class 'article\_\_title'. De datum wordt weergegeven binnen een time-tag met datetime als value en class 'article\_\_time'. De datum is ook opgemaakt in een bepaald formaat, dd-mm-yy, hh:mm. Deze gegevens zijn essentieel voor de scraper. In figuur \ref{fig:hln_article} vind je dit terug. \\
 
 \begin{center}
     \includegraphics[width = 6in]{hln_article1.png}
@@ -39,7 +39,7 @@ De structuur van de artikels op de startpagina van De Morgen is vergelijkbaar me
     \label{fig:demorgen_frontpage}
 \end{center}
 
-Bij het doorklikken op een willekeurig artikel zien we dat de DOM vergelijkbaar is, maar niet exact hetzelfde qua structuur. In figuur \ref{fig:demorgen_article} zie je de DOM.
+Bij het doorklikken op een willekeurig artikel zien we dat de DOM-structuur vergelijkbaar is, maar niet exact hetzelfde qua structuur. In figuur \ref{fig:demorgen_article} zie je de DOM.
 
 \begin{center}
     \includegraphics[width = 6in]{demorgen_article.png}
@@ -96,13 +96,13 @@ Deze methode voert de on\_start()-methode uit, die de initiële artikelen ophaal
 \end{pythoncode}
 
 \begin{pythoncode}{../../../workspace/paper/abstractThreadSHOULDSCRAPE.py}
-Deze methode controleert of de URL van een artikel overeenkomt met een van de opgegeven base\_urls. Als dit het geval is, wordt de article\_link ingesteld en wordt True geretourneerd om aan te geven dat het artikel moet worden gescraped.
+Deze methode controleert of de URL van een artikel overeenkomt met een van de opgegeven routes. Als dit het geval is, wordt de article\_link ingesteld en wordt True geretourneerd om aan te geven dat het artikel moet worden gescraped.
 \end{pythoncode}
 
 \begin{pythoncode}{../../../workspace/paper/abstractThreadSCRAPE.py}
     Deze methode haalt de inhoud van de article\_link op met behulp van een GET-verzoek en de opgegeven headers. Vervolgens worden de datum en titel geëxtraheerd op basis van de opgegeven HTML-klassen. Als de geëxtraheerde datum vandaag is, wordt de append\_to\_dict()-methode aangeroepen om het artikel op te slaan in de thread-safe dictionary. \\
     
-    Na elke request naar een bepaald artikel wordt er een korte sleep geïmplementeerd zodat we niet overdrijven in het aantal request dat we versturen om de server niet te overbelasten zoals besproken in punt \ref{subsection:scraper-ethische-aspecten}.
+    Na elke request naar een bepaald artikel wordt er een korte sleep geïmplementeerd zodat we niet overdrijven in het aantal request dat we versturen om de server niet te overbelasten zoals besproken in punt \ref{subsection:scraper-ethische-aspecten}. \\
 \end{pythoncode}
 
 De AbstractThread-klasse biedt een basis voor het implementeren van de specifieke threads.
@@ -111,20 +111,20 @@ De AbstractThread-klasse biedt een basis voor het implementeren van de specifiek
     De HLNThread wordt aangemaakt met de volgende code:
     
 \begin{pythoncode}{../../../workspace/paper/hlnThread.py}
-    De HLNThread wordt geïnitialiseerd met de specifieke eigenschappen die vereist zijn voor het scrapen van artikelen op de HLN-website. Het base\_url is "https://www.hln.be" en de routes zijn ["/buitenland", "/binnenland", "/vtm-nieuws"]. De HTML-klassen voor de titel en de datum worden ook opgegeven.
+    De HLNThread wordt geïnitialiseerd met de specifieke eigenschappen die vereist zijn voor het scrapen van artikelen op de HLN-website. De base\_url is "https://www.hln.be" en de routes zijn ["/buitenland", "/binnenland", "/vtm-nieuws"]. De HTML-klassen voor de titel en de datum worden ook opgegeven.
 \end{pythoncode}
 
 \subsubsection{De Morgen Thread}
     De DeMorgenThread wordt aangemaakt met de volgende code:
 
 \begin{pythoncode}{../../../workspace/paper/deMorgenThread.py}
-    De DeMorgenThread wordt geïnitialiseerd met de specifieke eigenschappen die vereist zijn voor het scrapen van artikelen op de De Morgen-website. De base\_url is "https://www.demorgen.be" en de routes moeten nog worden toegevoegd, afhankelijk van de specifieke routes op de website van De Morgen doen we dit binnenin de on\_start()-methode om zo steeds de up-to-date routes te hebben. De HTML-klassen voor de titel en de datum worden ook opgegeven.x
+    DeMorgenThread wordt geïnitialiseerd met de specifieke parameters die vereist zijn in de AbstractThread voor het scrapen van de website. De base\_url is 'https://www.demorgen.be' en de routes moeten nog worden toegevoegd, afhankelijk van de specifieke routes op de website van De Morgen doen we dit binnenin de on\_start()-methode om zo steeds de up-to-date routes te hebben. De HTML-klassen voor de titel en de datum worden ook opgegeven.
 \end{pythoncode}
 
 \subsubsection{Uitvoering}
 Om dit nu allemaal te kunnen uitvoeren zullen we een scraper klasse maken, die de verschillende threads initializeerd en de uitkomst hiervan retourneerd. De implementatie hiervan is als volgt: 
 \begin{pythoncode}{../../../workspace/paper/scraper.py}
-    Hiervoor wordt gebruikt gemaakt van een \emph{ThreadPoolExecutor}. Om de threads te runnen en de uitkomst hiervan als future terug te krijgen. Als uitkomst hiervan wordt de dictionary ge-retourneerd.
+    Hiervoor wordt gebruikt gemaakt van een ThreadPoolExecutor om de threads te runnen en de uitkomst hiervan als future terug te krijgen. Als uitkomst hiervan wordt de dictionary ge-retourneerd.
 \end{pythoncode}
 
 \subsection{Uitkomst}
@@ -139,12 +139,11 @@ Na het voltooien van alle threads halen we de gescrapete gegevens op met behulp 
 Dit is een basisimplementatie van het startpunt van de applicatie, die in volgende stappen wordt aangepast en uitgebreid.
 \end{pythoncode}
 
-Het resultaat van de scraper kun je terugvinden in bijlage punt \ref{bijlage:json-input}
-
+Het resultaat van de scraper kun je terugvinden in bijlage.
 
 \section{GPT}
 \subsection{Inleiding}
-Om GPT te kunnen gebruiken, zullen we de API van OpenAI gebruiken. Deze API kan prijzig zijn, vooral voor GPT-4. Daarom zullen we binnen dit onderzoek gebruik maken van GPT-3.5, wat neerkomt op ongeveer \$0.10 per verzoek \autocite{gpt_pricing}.
+Om GPT te kunnen gebruiken, zullen we de API van OpenAI gebruiken. Deze API kan prijzig zijn, vooral voor GPT-4. Daarom zullen we binnen dit onderzoek gebruik maken van GPT-3.5, wat neerkomt op ongeveer \$0.05 per verzoek \autocite{gpt_pricing}.
 
 Volgens de API kan GPT verdergaan in een conversatie door gebruik te maken van een dialoog.
 
@@ -162,7 +161,7 @@ Omdat we de API zullen gebruiken voor verschillende gebruiksscenario's, hebben w
 \end{pythoncode}
 
 \subsubsection{ChatGPT}
-Tot slot zullen we een klasse maken genaamd ChatGPT, die verantwoordelijk is voor alle communicatie met GPT. Deze klasse start een conversatie met GPT en vraagt hem telkens om te reageren op de conversatie. Uiteindelijk ontvangt hij de gescrapete gegevens en retourneert hij de prompt voor DALL-E. Hieronder wordt de code geïllustreerd.
+Tot slot zullen we een klasse maken genaamd ChatGPT, die verantwoordelijk is voor alle communicatie met GPT. Deze klasse start een conversatie met GPT. Uiteindelijk ontvangt hij de gescrapete gegevens en retourneert hij de prompt voor DALL-E. Hieronder wordt de code geïllustreerd.
 \begin{pythoncode}{../../../workspace/paper/openAI/chatgpt.py}
 \end{pythoncode}
 
@@ -187,11 +186,12 @@ Hier is een voorbeeld van een conversatie:
         Hieronder vind je de artikels in json formaat, gegroepeerd per url van belangrijk naar minder belangrijk. <json data gescraped met webscraper>}
     
     
-    \gptspeaks{Op basis van de beschikbare titels van de artikelen, zou ik de volgende groepering van hoogtepunt-artikelen aanbevelen:  \begin{itemize}
+    \gptspeaks{Op basis van de beschikbare titels van de artikelen, zou ik de volgende groepering van hoogtepunt-artikelen aanbevelen:  
+        \begin{itemize}
             \item{‘Ook aan hun kant ontploft er heel wat’: Oekraïne lijkt te dralen met zijn tegenoffensief.}
             \item{Poetins geheime bunkercomplex onder gigantisch paleis aan Zwarte Zee onthuld: zo ziet het eruit.}
-            \item{"‘VS zetten licht op groen voor training Oekraïense piloten in westerse gevechtsvliegtuigen.’"}
-    \end{itemize}
+            \item{VS zetten licht op groen voor training Oekraïense piloten in westerse gevechtsvliegtuigen.}
+        \end{itemize}
 Merk op dat deze groepering enkel gebaseerd is op de titels van de artikelen en dat deze niet noodzakelijk overeenkomen met de werkelijke gebeurtenissen of de inhoud van de artikelen. Ik raad je aan om de artikelen en hun inhoud te lezen om beter te begrijpen waarover ze gaan en om zelf een weloverwogen beslissing te nemen over welke gebeurtenissen je relevant vindt om in een kunstwerk te verwerken.}
 
     
@@ -199,7 +199,7 @@ Merk op dat deze groepering enkel gebaseerd is op de titels van de artikelen en 
     
     \gptspeaks{De kernboodschap van de artikelen is dat er zich tragische gebeurtenissen hebben voorgedaan, zoals dodelijke ongevallen, schietpartijen en conflicten tussen landen. Deze gebeurtenissen worden gekenmerkt door verlies, geweld en spanning. Een schilderij dat deze boodschap weerspiegelt, zou de emotionele impact en de donkere aspecten van deze gebeurtenissen kunnen benadrukken..}
     
-    \appspeaks{user: Maak voor mij een kernboodschap op basis van voorgaand JSON. Houd de boodschap beperkt tot één artikel.}
+    \appspeaks{Maak voor mij een kernboodschap op basis van voorgaand JSON. Houd de boodschap beperkt tot één artikel.}
     
     \gptspeaks{Op basis van de beschikbare artikelen in de gegeven JSON, zou ik de volgende kernboodschap aanbevelen: "Tragische gebeurtenissen markeren het verlies van mensenlevens en de schokkende realiteit van geweld'}
     
@@ -207,7 +207,7 @@ Merk op dat deze groepering enkel gebaseerd is op de titels van de artikelen en 
         Wat zou een goede prompt kunnen zijn die een kernboodschap weergeeft van de belangrijkste artikel, de boodschap moet goed overkomen.
         Vergeet geen stijl erbij te zeggen.}
     
-    \gptspeaks{Een prompt die de kernboodschap van de artikels weergeeft en geschikt zou kunnen zijn voor een kunstwerk gegenereerd door DALL-E zou kunnen luiden: "Een indringend kunstwerk dat de tragiek van verlies en het conflict tussen Rusland en Oekraïne verbeeldt, in expressief realisme."}
+    \gptspeaks{Een prompt die de kernboodschap van de artikels weergeeft en geschikt zou kunnen zijn voor een kunstwerk gegenereerd door DALL-E zou kunnen luiden: Een indringend kunstwerk dat de tragiek van verlies en het conflict tussen Rusland en Oekraine verbeeldt, in expressief realisme.}
     
     \appspeaks{Reageer enkel met een prompt die deze kernboodschap weergeeft en zet deze tussen quotes zet er ook bij door welke kunstenaar deze is geschilderd of in welke stijl. Gebruik maximum 75 karakters.}
     
@@ -225,7 +225,7 @@ Merk op dat deze groepering enkel gebaseerd is op de titels van de artikelen en 
 \section{DALL-E}
 
 \subsection{Inleiding}
-Net als bij GPT maken we gebruik van de OpenAI Python-bibliotheek om DALL·E te benaderen. Met DALL·E kunnen we kunstwerken creëren die overeenkomen met de prompts gegenereerd door GPT.
+Net als bij GPT maken we gebruik van de OpenAI Python-bibliotheek om DALL-E te benaderen. Met DALL-E kunnen we kunstwerken creëren die overeenkomen met de prompts gegenereerd door GPT.
 
 \subsection{Implementatie}
 Om kunstwerken te genereren met behulp van DALL-E, moeten we eerst de RequestHandler uitbreiden met een nieuwe methode om verzoeken te versturen via de openai library. Vervolgens definiëren we een klasse voor DALL-E, zodat we deze kunnen gebruiken in het 
@@ -256,3 +256,6 @@ DALL-E genereert een URL waar we het kunstwerk kunnen bekijken. De onderstaande 
     \captionof{figure}{Kunstwerk gegenereerd met DALL-E en GPT met behulp van de gescrapete data in figuur 4.5}
     \label{fig:dall-e_result}
 \end{center}
+
+In het volgende hoofdstuk zullen we het resultaat van deze proof of concept gaan valideren om zo een antwoord te kunnen bieden op de vraag: Is AI geavanceerd genoeg om kunstwerken te genereren waarvan de boodschap herkenbaar is uit het dagelijks nieuws. 
+

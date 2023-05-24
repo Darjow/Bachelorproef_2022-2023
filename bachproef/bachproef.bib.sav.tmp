@@ -40,27 +40,27 @@ and improving them. Data and code are available at data and code, respectively.}
 }
 
 @Online{DallEWikipediaEN,
-  author       = {en.wikipedia.org},
+  author       = {Wikipedia},
   date         = {2022},
-  organization = {Wikipedia},
   title        = {DALL-E},
   url          = {https://en.wikipedia.org/wiki/DALL-E},
+  organization = {Wikipedia},
 }
 
 @Online{DallEWikipediaNL,
-  author       = {nl.wikipedia.org},
+  author       = {Wikipedia},
   date         = {2022},
-  organization = {nl.wikipedia.org: DALL-E},
   title        = {DALL-E},
   url          = {https://nl.wikipedia.org/wiki/DALL-E},
+  organization = {nl.wikipedia.org: DALL-E},
 }
 
 @Online{StableDifWikipediaEN,
-  author       = {en.wikipedia.org},
-  date         = 2022,
-  organization = {Wikipedia},
+  author       = {Wikipedia},
+  date         = {2022},
   title        = {Stable Diffusion},
   url          = {https://en.wikipedia.org/wiki/Stable_Diffusion},
+  organization = {Wikipedia},
 }
 
 @Online{SonixAI2021,
@@ -72,7 +72,7 @@ and improving them. Data and code are available at data and code, respectively.}
 }
 
 @Online{HU2021,
-  author       = {Hogeschool Utrecht},
+  author       = {HogeschoolUtrecht},
   date         = {2021},
   title        = {RobotReporter: Onderzoek naar generatieve AI-systemen},
   url          = {https://www.hu.nl/onderzoek/projecten/robotreporter-onderzoek-naar-generatieve-ai-systemen},
@@ -80,11 +80,11 @@ and improving them. Data and code are available at data and code, respectively.}
 }
 
 @Online{HBR2023,
-author = {Harvard Business Review},
-date = {2023},
-organization = {Harvard Business Review},
-title = {Generative AI Will Enhance, Not Erase, Customer Service Jobs},
-url = {https://hbr.org/2023/03/generative-ai-will-enhance-not-erase-customer-service-jobs},
+  author       = {Harvard},
+  date         = {2023},
+  title        = {Generative AI Will Enhance, Not Erase, Customer Service Jobs},
+  url          = {https://hbr.org/2023/03/generative-ai-will-enhance-not-erase-customer-service-jobs},
+  organization = {Harvard Business Review},
 }
 
 @Article{BIO2014,
@@ -171,4 +171,5 @@ url = {https://arxiv.org/pdf/2303.13375.pdf},
 }
 
 @Article{gtp_agi,
-  author = {Microsoft Research},
+  author = {Microsoft},
+  da
