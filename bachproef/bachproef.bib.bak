@@ -80,11 +80,11 @@ and improving them. Data and code are available at data and code, respectively.}
 }
 
 @Online{HBR2023,
-author = {Harvard Business Review},
-date = {2023},
-organization = {Harvard Business Review},
-title = {Generative AI Will Enhance, Not Erase, Customer Service Jobs},
-url = {https://hbr.org/2023/03/generative-ai-will-enhance-not-erase-customer-service-jobs},
+  author       = {Harvard},
+  date         = {2023},
+  title        = {Generative AI Will Enhance, Not Erase, Customer Service Jobs},
+  url          = {https://hbr.org/2023/03/generative-ai-will-enhance-not-erase-customer-service-jobs},
+  organization = {Harvard Business Review},
 }
 
 @Article{BIO2014,

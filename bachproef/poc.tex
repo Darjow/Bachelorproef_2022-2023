@@ -1,11 +1,11 @@
 \chapter{\IfLanguageName{dutch}{proof-of-concept}{proof-of-concept}}%
 \label{ch:proof-of-concept}
 \section{Inleiding}
-In dit hoofdstuk bespreken we de implementatie van het proof-of-concept. We bespreken elke fase van het proces in detail en de implementatie van de bijbehorende componenten toelichten. Hierbij zullen we ook de uitkomsten van elke fase beschrijven en hoe deze kunnen gebruikt worden in de volgende fase. 
+In dit hoofdstuk bespreken we de implementatie van het proof-of-concept. We bespreken elke fase van het proces in detail en zullen de implementatie van de bijbehorende componenten toelichten. Hierbij gaan we ook de uitkomsten van elke fase beschrijven en hoe deze  gebruikt kunnen worden in de volgende fase. 
 
 \section{Webscraper}
 \subsection{Algemene Eisen}
-Binnen de algemene eisen zal de webscraper voldoen aan de ethische aspecten \ref{subsection:scraper-ethische-aspecten} die eerder werden beschreven. Dit betekent dat de scraper de regels en richtlijnen van de gescrapte websites zal respecteren en zich zal houden aan eventuele beperkingen zoals vermeld in het robots.txt-bestand. Hierdoor wordt ervoor gezorgd dat de scrapingactiviteiten op een ethisch verantwoorde manier worden uitgevoerd. \\
+Binnen de algemene eisen zal de webscraper voldoen aan de ethische aspecten beschreven in sectie \ref{subsection:scraper-ethische-aspecten}. Dit betekent dat de scraper de regels en richtlijnen van de gescrapte websites zal respecteren en zich zal houden aan eventuele beperkingen zoals vermeld in het robots.txt-bestand. Hierdoor wordt ervoor gezorgd dat de scrapingactiviteiten op een ethisch verantwoorde manier worden uitgevoerd. \\
 
 Daarnaast zal de webscraper in staat zijn om verschillende websites te scrapen, met de focus op het verzamelen van de frontpage-inhoud. Specifiek zal de scraper de eerste 20 items van de frontpage van elke website verzamelen. \\
 
@@ -14,7 +14,9 @@ De webscraper zal twee bekende nieuwsbronnen scrapen, namelijk HLN en DeMorgen.
 \subsection{Verkenning}
 Alvorens we de webscraper kunnen implementeren, is het nodig om de DOM-structuur \footnote{De DOM-structuur (Document Object Model) is een hiërarchische representatie van een HTML- of XML-document.} van beide websites te bekijken en een patroon hierin te herkennen. 
 \subsubsection{HLN}
-Op de startpagina van HLN kunnen we zien (figuur \ref{fig:hln_frontpage}) dat elk nieuwsartikel zich bevindt binnen een article-tag bevindt. De eerste subtag is een a-tag met hierin de href naar het artikel. \\ Deze href zal belangrijk zijn om de datum te valideren en de titel te extraheren. We moeten deze dus opslaan. 
+Op de startpagina van HLN kunnen we zien in figuur \ref{fig:hln_frontpage} dat elk nieuwsartikel zich bevindt binnen een article-tag bevindt. De eerste subtag is een a-tag met hierin de href naar het artikel. \\ 
+
+Deze href zal belangrijk zijn om de datum te valideren en de titel te extraheren. We moeten deze dus opslaan. 
 
 \begin{center}
     \includegraphics[width = 6in]{hln_frontpage2.png}
@@ -143,9 +145,9 @@ Het resultaat van de scraper kun je terugvinden in bijlage.
 
 \section{GPT}
 \subsection{Inleiding}
-Om GPT te kunnen gebruiken, zullen we de API van OpenAI gebruiken. Deze API kan prijzig zijn, vooral voor GPT-4. Daarom zullen we binnen dit onderzoek gebruik maken van GPT-3.5, wat neerkomt op ongeveer \$0.05 per verzoek \autocite{gpt_pricing}.
+Om GPT te kunnen gebruiken, zullen we de API van OpenAI gebruiken. Deze API kan prijzig zijn, vooral voor GPT-4. Daarom zullen we binnen dit onderzoek gebruik maken van GPT-3.5, wat neerkomt op ongeveer €0.05 per verzoek \autocite{gpt_pricing}. \\
 
-Volgens de API kan GPT verdergaan in een conversatie door gebruik te maken van een dialoog.
+Volgens de API kan GPT verdergaan in een conversatie door gebruik te maken van een dialoog. \\
 
 De implementatie zal ervoor zorgen dat we een conversatie starten met GPT en hem vragen om een prompt te retourneren, zoals: 'Thema en/of gevoel en/of onderwerp geschilderd door: ...'. We zullen hiervoor de OpenAI Python-bibliotheek gebruiken, die beschikbaar is op GitHub\footnote{\url{https://github.com/openai/openai-python}}.
 

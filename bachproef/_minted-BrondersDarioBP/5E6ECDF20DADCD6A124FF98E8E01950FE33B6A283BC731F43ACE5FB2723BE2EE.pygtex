@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{openAI.util} \PYG{k+kn}{import} \PYG{n}{config}
+\PYG{k+kn}{import} \PYG{n+nn}{requests}
+\PYG{k+kn}{import} \PYG{n+nn}{openai}
+
+\PYG{k}{class} \PYG{n+nc}{RequestHandler}\PYG{p}{:}
+  \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+    \PYG{n}{openai}\PYG{o}{.}\PYG{n}{api\PYGZus{}key} \PYG{o}{=}  \PYG{n}{config}\PYG{o}{.}\PYG{n}{api\PYGZus{}key}\PYG{p}{()}
+
+  \PYG{k}{def} \PYG{n+nf}{ask\PYGZus{}chatgpt}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{conversation}\PYG{p}{):}  
+    \PYG{n}{response} \PYG{o}{=} \PYG{n}{openai}\PYG{o}{.}\PYG{n}{ChatCompletion}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}
+      \PYG{n}{model}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}3.5\PYGZhy{}turbo\PYGZdq{}}\PYG{p}{,}
+      \PYG{n}{messages} \PYG{o}{=} \PYG{n}{conversation}
+    \PYG{p}{)}    
+    
+    \PYG{n}{generated\PYGZus{}text} \PYG{o}{=} \PYG{n}{response}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}choices\PYGZdq{}}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{message}\PYG{o}{.}\PYG{n}{content}\PYG{o}{.}\PYG{n}{strip}\PYG{p}{()}
+    \PYG{k}{return} \PYG{n}{generated\PYGZus{}text}
+\end{Verbatim}
