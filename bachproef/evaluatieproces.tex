@@ -3,11 +3,11 @@
 \section{Inleiding}
 Het interpreteren van gevoelens en boodschappen uit kunstwerken is een zeer persoonlijk iets. Het beoordelen van de effectiviteit van de applicatie is dus een uitdagende taak. Om een grondige evaluatie van onze kunstwerken mogelijk te maken, is er besloten om een Turingtest te implementeren als onderdeel van ons evaluatieproces. Hierbij werken we met een diverse set persona's. \\
 
-Het doel van ons evaluatieproces is om de interpretatie en relevantie van de kunstwerken te valideren. Het resultaat van de turingtest kun je vinden in punt \ref{section:result}.
+Het doel van ons evaluatieproces is om de interpretatie en relevantie van de kunstwerken te valideren. Het resultaat van de turingtest kun je vinden in sectie \ref{section:result}.
 
 \section{Turingtest}
 \label{sec:turingtest}
- Door deelnemers te vragen specifiek nieuws te identificeren dat zij associëren met elk schilderij, kunnen we hun begrip van de context en hun vermogen om de artistieke interpretatie te verbinden met actuele gebeurtenissen beoordelen. We zullen de deelnemers vragen om specifieke nieuwsgebeurtenissen te identificeren die zij associëren met elk schilderij.  Indien een deelnemer een onjuiste associatie maakt, zullen we het betreffende nieuwsartikel tonen en vervolgens vragen of ze het nieuwsgebeuren herkennen.. Indien een deelnemer geen nieuws volgt, kunnen we hem altijd vragen te gokken naar wat er zou kunnen ge-associeerd zijn met deze kunstwerk om te weten welk gevoel of boodschap dit overbrengt. \\
+ Door deelnemers te vragen specifiek nieuws te identificeren dat zij associëren met elk schilderij, kunnen we hun begrip van de context en hun vermogen om de artistieke interpretatie te verbinden met actuele gebeurtenissen beoordelen. We zullen de deelnemers vragen om specifieke nieuwsgebeurtenissen te identificeren die zij associëren met elk schilderij.  Indien een deelnemer een onjuiste associatie maakt, zullen we het betreffende nieuwsartikel tonen en vervolgens vragen of ze het nieuwsgebeuren herkennen. Indien een deelnemer geen nieuws volgt, kunnen we hem altijd vragen te gokken naar wat er zou kunnen ge-associeerd zijn met deze kunstwerk om te weten welk gevoel of boodschap dit overbrengt. \\
  
  In deze test zullen we deelnemers vragen om 3 verschillende schilderijen te bekijken, elk verkregen door de de applicatie van de laatste drie dagen. De taak van de deelnemers is om aan te geven welk nieuwsgebeuren zij herkennen in elk van de schilderijen. Het resultaat van deze 3 samples laat ons toe om te kunnen oordelen of de applicatie goed zou kunnen werken binnen bijvoorbeeld een krant of nieuwswebsite.  \\
  
@@ -50,9 +50,9 @@ Naast deze diversiteit in persoonlijke kenmerken hebben is er ook voor gekozen o
 \section{Samples}
 Alle persona's, beschreven in de vorige tabel \ref{table:persona}, worden bevraagd aan de hand van 3 schilderijen. Deze schilderijen representeren de belangrijkste nieuwsgebeurtenissen van dit weekend, waarbij één artikel een boodschap overbrengt die dateert van maandag. Aangezien de test op dinsdag plaatsvindt, zal er maximaal 3 dagen tussen het oudste schilderij zitten. \\
 
-In de tabel hieronder vindt u de 3 schilderijen, inclusief de datum en de gebruikte prompt. Nadat we de prompt hebben ontvangen, stellen we de vraag aan GPT: 'Op basis van welke kernartikelen heb je dit gegenereerd?'. Het antwoord hierop wordt ook weergegeven in de tabel terug te vinden in tabel \ref{table:samples}. \\
+In de onderstaande tabel vindt u informatie over 3 schilderijen, waaronder de datum en de gebruikte prompt. Nadat we de prompt hebben ontvangen, stellen we de vraag aan GPT: 'Welke kernartikelen heb je gebruikt om dit te genereren?'. Het antwoord van GPT wordt ook weergegeven in de tabel onder de header 'Inspiratie (volgens GPT)'. \\
 
-Daarnaast zijn er ook 2 extra samples toegevoegd die bekende gebeurtenissen uit het verleden representeren zoals vermeld in punt \ref{sec:turingtest}. Deze tabel is terug te vinden in tabel \ref{table:events_samples}
+Daarnaast zijn er ook 2 extra samples toegevoegd die bekende gebeurtenissen uit het verleden representeren zoals vermeld in punt \ref{sec:turingtest}. Deze zijn terug te vinden in tabel \ref{table:events_samples}
 
     \begin{table}[htbp]
         \centering
@@ -79,15 +79,15 @@ Daarnaast zijn er ook 2 extra samples toegevoegd die bekende gebeurtenissen uit 
 
     \begin{table}[htbp]
     \centering
-    \begin{tabular}{|p{2.2cm}|p{5.7cm}|p{5.7cm}|}
+    \begin{tabular}{|p{2.5cm}|p{6.8cm}|p{6.8cm}|}
         \hline
         & 
-        \adjustbox{width=5.4cm,padding=5pt}{\includegraphics{./graphics/sample_4.png}} &
-        \adjustbox{width=5.4cm,padding=5pt}{\includegraphics{./graphics/sample_5.png}} \\
+        \adjustbox{width=5.6cm,padding=5pt}{\includegraphics{./graphics/sample_4.png}} &
+        \adjustbox{width=5.6cm,padding=5pt}{\includegraphics{./graphics/sample_5.png}} \\
         \hline
         \textbf{Referentie} &  \textbf{Sample 4} & \textbf{Sample 5} \\
         \hline
-        Gebeurtenis &Terroristische aanslagen op het World Trade Center (11-9-2001) &  Brand in de Notre-Dame-kathedraal in Parijs.(15-4-2019) \\
+        Gebeurtenis &Terroristische aanslagen op het World Trade Center. (11 september 2001)&  Brand in de Notre-Dame-kathedraal in Parijs. (15 april 2019) \\
         \hline
         Gebruikte prompt & 'Het verlies van onschuld en levens. Herdenk 9/11 met een modern kunstwerk in zwart-wit." - Stijl: Abstract-expressionisme.. & Symboliseer herstelkracht Notre-Dame na verwoestend vuur met hoopvolle, realistische elementen. Stijl: impressionisme. - Monet \\
         \hline

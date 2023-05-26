@@ -104,10 +104,10 @@ Deze methode controleert of de URL van een artikel overeenkomt met een van de op
 \begin{pythoncode}{../../../workspace/paper/abstractThreadSCRAPE.py}
     Deze methode haalt de inhoud van de article\_link op met behulp van een GET-verzoek en de opgegeven headers. Vervolgens worden de datum en titel geëxtraheerd op basis van de opgegeven HTML-klassen. Als de geëxtraheerde datum vandaag is, wordt de append\_to\_dict()-methode aangeroepen om het artikel op te slaan in de thread-safe dictionary. \\
     
-    Na elke request naar een bepaald artikel wordt er een korte sleep geïmplementeerd zodat we niet overdrijven in het aantal request dat we versturen om de server niet te overbelasten zoals besproken in punt \ref{subsection:scraper-ethische-aspecten}. \\
+    Na elke request naar een bepaald artikel wordt er een korte sleep geïmplementeerd zodat we niet overdrijven in het aantal request dat we versturen in korte tijd om de server niet te overbelasten zoals besproken in punt \ref{subsection:scraper-ethische-aspecten}. \\
 \end{pythoncode}
 
-De AbstractThread-klasse biedt een basis voor het implementeren van de specifieke threads.
+De AbstractThread-klasse biedt een  voor het implementeren van de specifieke threads.
 
 \subsubsection{HLNThread}
     De HLNThread wordt aangemaakt met de volgende code:
@@ -134,9 +134,9 @@ Om de uitkomst hiervan te testen, maken we een nieuw bestand aan genaamd \_\_mai
 \begin{pythoncode}{../../../workspace/paper/scraperMain.py}
 In de main functie starten we het scrapingproces door de start\_scraping()-methode aan te roepen. De gescrapete gegevens worden opgeslagen en geprint op de console. \\
 
-De start\_scraping functie initialiseert een VolatileDict object om de gescrapete gegevens op te slaan. Vervolgens maken we instanties van de specifieke threads en voegen we ze toe aan de lijst threads. We gebruiken een ThreadPoolExecutor om de threads parallel uit te voeren en slaan de resultaten op in de futures lijst. \\
+De start\_scraping()-methode initialiseert een VolatileDict object om de gescrapete gegevens op te slaan. Vervolgens maken we instanties van de specifieke threads en voegen we ze toe aan de lijst threads. We gebruiken een ThreadPoolExecutor om de threads parallel uit te voeren en slaan de resultaten op in de futures lijst. \\
 
-Na het voltooien van alle threads halen we de gescrapete gegevens op met behulp van de output\_dict() methode van het VolatileDict object. Deze gegevens worden geretourneerd als het resultaat van de functie. \\
+Na het voltooien van alle threads halen we de gescrapete gegevens op met behulp van de output\_dict()-methode van het VolatileDict object. Deze gegevens worden geretourneerd als het resultaat van de functie. \\
 
 Dit is een basisimplementatie van het startpunt van de applicatie, die in volgende stappen wordt aangepast en uitgebreid.
 \end{pythoncode}
@@ -145,7 +145,7 @@ Het resultaat van de scraper kun je terugvinden in bijlage.
 
 \section{GPT}
 \subsection{Inleiding}
-Om GPT te kunnen gebruiken, zullen we de API van OpenAI gebruiken. Deze API kan prijzig zijn, vooral voor GPT-4. Daarom zullen we binnen dit onderzoek gebruik maken van GPT-3.5, wat neerkomt op ongeveer €0.05 per verzoek \autocite{gpt_pricing}. \\
+Om GPT te kunnen gebruiken, zullen we de API van OpenAI gebruiken. Deze API kan prijzig zijn, vooral voor GPT-4. Daarom zullen we binnen dit onderzoek gebruik maken van GPT-3.5, wat neerkomt op ongeveer €0.05 per verzoek. \autocite{gpt_pricing} \\
 
 Volgens de API kan GPT verdergaan in een conversatie door gebruik te maken van een dialoog. \\
 
@@ -217,7 +217,7 @@ Merk op dat deze groepering enkel gebaseerd is op de titels van de artikelen en 
     
     \appspeaks{Op basis van welke kernartikels heb je dit gehaald?}
     
-    \gptspeaks{Dit kunstwerk is gebaseerd op de drie belangrijkste artikelen zoals eerder vermeld, namelijk het tegenoffensief van Oekraïne, Poetins geheime bunkercomplex aan de Zwarte Zee en VS die de training van Oekraïense piloten start. }
+    \gptspeaks{Dit kunstwerk is gebaseerd op de drie belangrijkste artikelen zoals eerder vermeld, namelijk het tegenoffensief van Oekraïne, Poetins geheime bunkercomplex aan de Zwarte Zee en VS die de training van Oekraïense piloten start.  \\}
 \end{drama}
 
     \noindent
@@ -230,7 +230,7 @@ Merk op dat deze groepering enkel gebaseerd is op de titels van de artikelen en 
 Net als bij GPT maken we gebruik van de OpenAI Python-bibliotheek om DALL-E te benaderen. Met DALL-E kunnen we kunstwerken creëren die overeenkomen met de prompts gegenereerd door GPT.
 
 \subsection{Implementatie}
-Om kunstwerken te genereren met behulp van DALL-E, moeten we eerst de RequestHandler uitbreiden met een nieuwe methode om verzoeken te versturen via de openai library. Vervolgens definiëren we een klasse voor DALL-E, zodat we deze kunnen gebruiken in het 
+Om kunstwerken te genereren met behulp van DALL-E, moeten we eerst de RequestHandler uitbreiden met een nieuwe methode om verzoeken te versturen via de openai bibiliotheek. Vervolgens definiëren we een klasse voor DALL-E, zodat we deze kunnen gebruiken in het 
 \_\_main\_\_.py bestand. \\
 
 We beginnen met het uitbreiden van de RequestHandler.
